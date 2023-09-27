@@ -1,7 +1,7 @@
 import json
 
-class Transformer(object):
 
+class Transformer(object):
     def transform_input(self, X, meta):
         print(X)
-        return X+1
+        return X + 1

@@ -1,9 +1,15 @@
-
 import numpy as np
-np.random.seed(123)   # for reproducibility
 
-from tensorflow.keras.layers import (Activation, Convolution2D, Dense, Dropout,
-                                     Flatten, MaxPooling2D)
+np.random.seed(123)  # for reproducibility
+
+from tensorflow.keras.layers import (
+    Activation,
+    Convolution2D,
+    Dense,
+    Dropout,
+    Flatten,
+    MaxPooling2D,
+)
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.utils import to_categorical
 

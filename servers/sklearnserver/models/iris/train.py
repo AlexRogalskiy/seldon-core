@@ -5,7 +5,7 @@ from sklearn import datasets
 
 
 def main():
-    clf = LogisticRegression(solver="liblinear", multi_class='ovr')
+    clf = LogisticRegression(solver="liblinear", multi_class="ovr")
     p = Pipeline([("clf", clf)])
     print("Training model...")
     p.fit(X, y)

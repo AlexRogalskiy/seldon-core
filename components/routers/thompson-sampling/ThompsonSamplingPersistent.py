@@ -19,28 +19,28 @@ __version__ = "0.1"
 
 
 class ThompsonSamplingPersistent(object):
-    """ Multi-armed bandit routing using Thompson Sampling strategy.
+    """Multi-armed bandit routing using Thompson Sampling strategy.
 
-    This class implements Thompson Sampling for the Beta-Binomial model, i.e.
-    rewards are assumed to come from a Bernoulli distribution for which the
-    conjugate prior is a Beta distribution.
+        This class implements Thompson Sampling for the Beta-Binomial model, i.e.
+        rewards are assumed to come from a Bernoulli distribution for which the
+        conjugate prior is a Beta distribution.
 
-    The reward is assumed to be a single float between 0 and 1 indicating the
-    mean reward for a batch of samples. The prior is a Beta(1,1) distribution
-    (Uniform over the child components).
-#
-    Parameters
-    ----------
-    n_branches : int
-        Number of child components/models the router will route requests to
-    verbose : bool
-        Set the logger level
-    seed : int, optional
-        Set the random seed
-    history : bool
-        Set storing router history
-    branch_names: str, optional
-        A string specifying branch names separated by `:`
+        The reward is assumed to be a single float between 0 and 1 indicating the
+        mean reward for a batch of samples. The prior is a Beta(1,1) distribution
+        (Uniform over the child components).
+    #
+        Parameters
+        ----------
+        n_branches : int
+            Number of child components/models the router will route requests to
+        verbose : bool
+            Set the logger level
+        seed : int, optional
+            Set the random seed
+        history : bool
+            Set storing router history
+        branch_names: str, optional
+            A string specifying branch names separated by `:`
 
     """
 
@@ -52,7 +52,6 @@ class ThompsonSamplingPersistent(object):
         history=False,
         branch_names=None,
     ):
-
         if verbose:
             logger.setLevel(10)
             logger.info("Enabling debug mode")
@@ -93,7 +92,9 @@ class ThompsonSamplingPersistent(object):
         models_beta_params = [int(i) for i in self.rc.lrange(self.key, 0, -1)]
 
         # Use zip iter to iterate across each pair of numbers in the list
-        branch_values = [np.random.beta(a, b) for a, b in zip(*[iter(models_beta_params)] * 2)]
+        branch_values = [
+            np.random.beta(a, b) for a, b in zip(*[iter(models_beta_params)] * 2)
+        ]
 
         selected_branch = np.argmax(branch_values)
         logger.debug("Sampled branch values: %s", branch_values)
@@ -108,8 +109,14 @@ class ThompsonSamplingPersistent(object):
         logger.debug(f"n_success: {n_success}, n_failures: {n_failures}")
 
         # TODO: Non atomic / non-thread-safe operation which will get overridden by other replicas/threads
-        self.rc.lset(self.key, routing*2, self.rc.lindex(self.key, routing*2) + n_success)
-        self.rc.lset(self.key, routing*2 + 1, self.rc.lindex(self.key, routing*2 + 1) + n_failures)
+        self.rc.lset(
+            self.key, routing * 2, self.rc.lindex(self.key, routing * 2) + n_success
+        )
+        self.rc.lset(
+            self.key,
+            routing * 2 + 1,
+            self.rc.lindex(self.key, routing * 2 + 1) + n_failures,
+        )
 
     def n_success_failures(self, features, reward):
         n_predictions = features.shape[0]

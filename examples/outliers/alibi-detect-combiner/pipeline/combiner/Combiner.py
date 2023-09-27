@@ -1,8 +1,8 @@
 import logging
 import numpy as np
 
-class Combiner(object):
 
+class Combiner(object):
     def aggregate(self, X, features_names=[]):
         logging.info("Input: " + str(X))
         output = {
