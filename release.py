@@ -242,7 +242,7 @@ def update_operator_kustomize_alibiexplainer_image(
     args = [
         "sed",
         "-i",
-        's#seldonio/alibiexplainer:{current_seldon_core_version}#seldonio/alibiexplainer:{seldon_core_version}#'.format(
+        "s#seldonio/alibiexplainer:{current_seldon_core_version}#seldonio/alibiexplainer:{seldon_core_version}#".format(
             **locals()
         ),
         fpath,
@@ -262,6 +262,7 @@ def update_operator_kustomize_alibiexplainer_image(
             )
         )
         print(err)
+
 
 def update_alibi_detect_image(
     fpath, current_seldon_core_version, seldon_core_version, debug=False
@@ -447,7 +448,6 @@ def update_dockerfile_label_version(seldon_core_version, debug=False):
 
 
 def update_python_wrapper_fixed_versions(seldon_core_version, debug=False):
-
     args = [
         "./hack/update_python_version.sh",
         "{seldon_core_version}".format(**locals()),
@@ -564,7 +564,9 @@ def set_version(
 
     # update alibi detect image references
     for fpath in alibi_detect_image_files:
-        update_alibi_detect_image(fpath, current_seldon_core_version, seldon_core_version)
+        update_alibi_detect_image(
+            fpath, current_seldon_core_version, seldon_core_version
+        )
 
     # update echo image references
     for fpath in echo_model_image_files:

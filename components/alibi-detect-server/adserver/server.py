@@ -237,7 +237,7 @@ class EventHandler(tornado.web.RequestHandler):
         # Extract any desired request headers
         headers = {}
 
-        for (key, val) in self.request.headers.get_all():
+        for key, val in self.request.headers.get_all():
             headers[key] = val
 
         response: Optional[ModelResponse] = self.model.process_event(request, headers)
@@ -253,7 +253,6 @@ class EventHandler(tornado.web.RequestHandler):
                 logging.error("Metrics returned are invalid: " + str(runtime_metrics))
 
         if response.data is not None:
-
             # Create event from response if reply_url is active
             if not self.reply_url == "":
                 if event.EventID() is None or event.EventID() == "":

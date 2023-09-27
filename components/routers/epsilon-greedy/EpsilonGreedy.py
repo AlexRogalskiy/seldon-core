@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 
 
 class EpsilonGreedy(object):
-    """ Multi-armed bandit routing using epsilon-greedy strategy.
+    """Multi-armed bandit routing using epsilon-greedy strategy.
 
     This class implements epsilon-greedy routing. The rewards are assumed to
     come from a Bernoulli distribution. The reward is assumed to be a single
@@ -42,7 +42,6 @@ class EpsilonGreedy(object):
         history=False,
         branch_names=None,
     ):
-
         if verbose:
             logger.setLevel(10)
             logger.info("Enabling debug mode")

@@ -1,6 +1,7 @@
 from subprocess import Popen, PIPE
 import os
 
+
 def run_command(args, debug=False):
     err, out = None, None
     if debug:
@@ -20,6 +21,7 @@ def run_command(args, debug=False):
             err["stdout"] = err["stdout"].strip()
     return err, out
 
+
 def scan_images(debug=False):
     paths = [
         "operator",
@@ -36,12 +38,7 @@ def scan_images(debug=False):
     ]
 
     for path in paths:
-        args = [
-            "make",
-            "-C",
-            "../../"+path,
-            "redhat-image-scan"
-        ]
+        args = ["make", "-C", "../../" + path, "redhat-image-scan"]
         err, out = run_command(args, debug)
         if err == None:
             print("updated {path}".format(**locals()))
@@ -56,7 +53,7 @@ def scan_images(debug=False):
 
 
 if __name__ == "__main__":
-    with open('../../version.txt', 'r') as file:
+    with open("../../version.txt", "r") as file:
         version = file.read()
         print(f"Will scan and upload images for {version}")
     scan_images()

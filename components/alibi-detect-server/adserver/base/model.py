@@ -2,11 +2,12 @@ from typing import List, Dict, Optional, Union
 
 DEFAULT_EVENT_PREFIX = "seldon.ceserver."
 
-class ModelResponse(object):
 
+class ModelResponse(object):
     def __init__(self, data: Dict, metrics: Optional[List[Dict]]):
         self.data = data
         self.metrics = metrics
+
 
 class CEModel(object):
     def __init__(self, name: str):
@@ -28,7 +29,9 @@ class CEModel(object):
         """
         raise NotImplementedError
 
-    def process_event(self, inputs: Union[List, Dict], headers: Dict) -> Optional[ModelResponse]:
+    def process_event(
+        self, inputs: Union[List, Dict], headers: Dict
+    ) -> Optional[ModelResponse]:
         """
         Process the event data and return a response
 

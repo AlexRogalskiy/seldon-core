@@ -5,7 +5,6 @@ from ml_utils import CleanTextTransformer, SpacyTokenTransformer
 
 class RedditClassifier(object):
     def __init__(self):
-
         self._clean_text_transformer = CleanTextTransformer()
         self._spacy_tokenizer = SpacyTokenTransformer()
 

@@ -20,7 +20,9 @@ class Model:
 
         logging.info(f"model X: {X}")
 
-        runtime_metrics = [{"type": "COUNTER", "key": "instance_counter", "value": len(X)}]
+        runtime_metrics = [
+            {"type": "COUNTER", "key": "instance_counter", "value": len(X)}
+        ]
         runtime_tags = {"runtime": "tag", "shared": "right one"}
         return SeldonResponse(data=X, metrics=runtime_metrics, tags=runtime_tags)
 
@@ -28,4 +30,4 @@ class Model:
         return [{"type": "COUNTER", "key": "requests_counter", "value": 1}]
 
     def tags(self):
-        return {"static": "tag", "shared": "not right one"}      
+        return {"static": "tag", "shared": "not right one"}
