@@ -37,29 +37,34 @@ def train_preprocessor(data):
     # TODO: ask if we need np.random.seed(...) here
 
     ordinal_features = [
-        n for (n, _) in enumerate(data.feature_names)
-        if n not in data.category_map
+        n for (n, _) in enumerate(data.feature_names) if n not in data.category_map
     ]
 
     categorical_features = list(data.category_map.keys())
-    ordinal_transformer = Pipeline(steps=[
-            ('imputer', SimpleImputer(strategy='median')),
-            ('scaler', StandardScaler())
-    ])
+    ordinal_transformer = Pipeline(
+        steps=[
+            ("imputer", SimpleImputer(strategy="median")),
+            ("scaler", StandardScaler()),
+        ]
+    )
 
-    categorical_transformer = Pipeline(steps=[
-            ('imputer', SimpleImputer(strategy='median')),
-            ('onehot', OneHotEncoder(handle_unknown='ignore'))
-    ])
+    categorical_transformer = Pipeline(
+        steps=[
+            ("imputer", SimpleImputer(strategy="median")),
+            ("onehot", OneHotEncoder(handle_unknown="ignore")),
+        ]
+    )
 
-    preprocessor = ColumnTransformer(transformers=[
-        ('num', ordinal_transformer, ordinal_features),
-        ('cat', categorical_transformer, categorical_features)
-    ])
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ("num", ordinal_transformer, ordinal_features),
+            ("cat", categorical_transformer, categorical_features),
+        ]
+    )
 
     preprocessor.fit(data.data)
 
-    return  preprocessor
+    return preprocessor
 
 
 def train_model(X_train, y_train, preprocessor):

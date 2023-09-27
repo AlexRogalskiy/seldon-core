@@ -7,7 +7,7 @@ from transformers import (
 
 def main() -> None:
     tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-neo-125M")
-    model = AutoModelForCausalLM.from_pretrained('roneneldan/TinyStories-1M')
+    model = AutoModelForCausalLM.from_pretrained("roneneldan/TinyStories-1M")
 
     p = pipeline(task="text-generation", model=model, tokenizer=tokenizer)
 

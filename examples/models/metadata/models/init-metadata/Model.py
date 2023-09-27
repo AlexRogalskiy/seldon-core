@@ -1,4 +1,3 @@
-
 import logging
 
 
@@ -23,9 +22,7 @@ class Model:
                 }
             ],
             "outputs": [{"messagetype": "tensor", "schema": {"shape": [1]}}],
-            "custom": {
-                "author": "seldon-dev"
-            }
+            "custom": {"author": "seldon-dev"},
         }
 
         return meta

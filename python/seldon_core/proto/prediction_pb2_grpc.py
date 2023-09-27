@@ -20,30 +20,30 @@ class GenericStub(object):
             channel: A grpc.Channel.
         """
         self.TransformInput = channel.unary_unary(
-                '/seldon.protos.Generic/TransformInput',
-                request_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-                response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                )
+            "/seldon.protos.Generic/TransformInput",
+            request_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+            response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+        )
         self.TransformOutput = channel.unary_unary(
-                '/seldon.protos.Generic/TransformOutput',
-                request_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-                response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                )
+            "/seldon.protos.Generic/TransformOutput",
+            request_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+            response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+        )
         self.Route = channel.unary_unary(
-                '/seldon.protos.Generic/Route',
-                request_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-                response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                )
+            "/seldon.protos.Generic/Route",
+            request_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+            response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+        )
         self.Aggregate = channel.unary_unary(
-                '/seldon.protos.Generic/Aggregate',
-                request_serializer=proto_dot_prediction__pb2.SeldonMessageList.SerializeToString,
-                response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                )
+            "/seldon.protos.Generic/Aggregate",
+            request_serializer=proto_dot_prediction__pb2.SeldonMessageList.SerializeToString,
+            response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+        )
         self.SendFeedback = channel.unary_unary(
-                '/seldon.protos.Generic/SendFeedback',
-                request_serializer=proto_dot_prediction__pb2.Feedback.SerializeToString,
-                response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                )
+            "/seldon.protos.Generic/SendFeedback",
+            request_serializer=proto_dot_prediction__pb2.Feedback.SerializeToString,
+            response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+        )
 
 
 class GenericServicer(object):
@@ -56,68 +56,69 @@ class GenericServicer(object):
     def TransformInput(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
     def TransformOutput(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
     def Route(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
     def Aggregate(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
     def SendFeedback(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
 
 def add_GenericServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'TransformInput': grpc.unary_unary_rpc_method_handler(
-                    servicer.TransformInput,
-                    request_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                    response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-            ),
-            'TransformOutput': grpc.unary_unary_rpc_method_handler(
-                    servicer.TransformOutput,
-                    request_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                    response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-            ),
-            'Route': grpc.unary_unary_rpc_method_handler(
-                    servicer.Route,
-                    request_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                    response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-            ),
-            'Aggregate': grpc.unary_unary_rpc_method_handler(
-                    servicer.Aggregate,
-                    request_deserializer=proto_dot_prediction__pb2.SeldonMessageList.FromString,
-                    response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-            ),
-            'SendFeedback': grpc.unary_unary_rpc_method_handler(
-                    servicer.SendFeedback,
-                    request_deserializer=proto_dot_prediction__pb2.Feedback.FromString,
-                    response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-            ),
+        "TransformInput": grpc.unary_unary_rpc_method_handler(
+            servicer.TransformInput,
+            request_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+            response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+        ),
+        "TransformOutput": grpc.unary_unary_rpc_method_handler(
+            servicer.TransformOutput,
+            request_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+            response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+        ),
+        "Route": grpc.unary_unary_rpc_method_handler(
+            servicer.Route,
+            request_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+            response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+        ),
+        "Aggregate": grpc.unary_unary_rpc_method_handler(
+            servicer.Aggregate,
+            request_deserializer=proto_dot_prediction__pb2.SeldonMessageList.FromString,
+            response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+        ),
+        "SendFeedback": grpc.unary_unary_rpc_method_handler(
+            servicer.SendFeedback,
+            request_deserializer=proto_dot_prediction__pb2.Feedback.FromString,
+            response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+        ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'seldon.protos.Generic', rpc_method_handlers)
+        "seldon.protos.Generic", rpc_method_handlers
+    )
     server.add_generic_rpc_handlers((generic_handler,))
 
 
- # This class is part of an EXPERIMENTAL API.
+# This class is part of an EXPERIMENTAL API.
 class Generic(object):
     """[END Messages]
 
@@ -126,89 +127,149 @@ class Generic(object):
     """
 
     @staticmethod
-    def TransformInput(request,
+    def TransformInput(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/seldon.protos.Generic/TransformInput',
+            "/seldon.protos.Generic/TransformInput",
             proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
             proto_dot_prediction__pb2.SeldonMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
     @staticmethod
-    def TransformOutput(request,
+    def TransformOutput(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/seldon.protos.Generic/TransformOutput',
+            "/seldon.protos.Generic/TransformOutput",
             proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
             proto_dot_prediction__pb2.SeldonMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
     @staticmethod
-    def Route(request,
+    def Route(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/seldon.protos.Generic/Route',
+            "/seldon.protos.Generic/Route",
             proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
             proto_dot_prediction__pb2.SeldonMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
     @staticmethod
-    def Aggregate(request,
+    def Aggregate(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/seldon.protos.Generic/Aggregate',
+            "/seldon.protos.Generic/Aggregate",
             proto_dot_prediction__pb2.SeldonMessageList.SerializeToString,
             proto_dot_prediction__pb2.SeldonMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
     @staticmethod
-    def SendFeedback(request,
+    def SendFeedback(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/seldon.protos.Generic/SendFeedback',
+            "/seldon.protos.Generic/SendFeedback",
             proto_dot_prediction__pb2.Feedback.SerializeToString,
             proto_dot_prediction__pb2.SeldonMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
 
 class ModelStub(object):
@@ -221,20 +282,20 @@ class ModelStub(object):
             channel: A grpc.Channel.
         """
         self.Predict = channel.unary_unary(
-                '/seldon.protos.Model/Predict',
-                request_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-                response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                )
+            "/seldon.protos.Model/Predict",
+            request_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+            response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+        )
         self.SendFeedback = channel.unary_unary(
-                '/seldon.protos.Model/SendFeedback',
-                request_serializer=proto_dot_prediction__pb2.Feedback.SerializeToString,
-                response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                )
+            "/seldon.protos.Model/SendFeedback",
+            request_serializer=proto_dot_prediction__pb2.Feedback.SerializeToString,
+            response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+        )
         self.Metadata = channel.unary_unary(
-                '/seldon.protos.Model/Metadata',
-                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-                response_deserializer=proto_dot_prediction__pb2.SeldonModelMetadata.FromString,
-                )
+            "/seldon.protos.Model/Metadata",
+            request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            response_deserializer=proto_dot_prediction__pb2.SeldonModelMetadata.FromString,
+        )
 
 
 class ModelServicer(object):
@@ -243,99 +304,136 @@ class ModelServicer(object):
     def Predict(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
     def SendFeedback(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
     def Metadata(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
 
 def add_ModelServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Predict': grpc.unary_unary_rpc_method_handler(
-                    servicer.Predict,
-                    request_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                    response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-            ),
-            'SendFeedback': grpc.unary_unary_rpc_method_handler(
-                    servicer.SendFeedback,
-                    request_deserializer=proto_dot_prediction__pb2.Feedback.FromString,
-                    response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-            ),
-            'Metadata': grpc.unary_unary_rpc_method_handler(
-                    servicer.Metadata,
-                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                    response_serializer=proto_dot_prediction__pb2.SeldonModelMetadata.SerializeToString,
-            ),
+        "Predict": grpc.unary_unary_rpc_method_handler(
+            servicer.Predict,
+            request_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+            response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+        ),
+        "SendFeedback": grpc.unary_unary_rpc_method_handler(
+            servicer.SendFeedback,
+            request_deserializer=proto_dot_prediction__pb2.Feedback.FromString,
+            response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+        ),
+        "Metadata": grpc.unary_unary_rpc_method_handler(
+            servicer.Metadata,
+            request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            response_serializer=proto_dot_prediction__pb2.SeldonModelMetadata.SerializeToString,
+        ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'seldon.protos.Model', rpc_method_handlers)
+        "seldon.protos.Model", rpc_method_handlers
+    )
     server.add_generic_rpc_handlers((generic_handler,))
 
 
- # This class is part of an EXPERIMENTAL API.
+# This class is part of an EXPERIMENTAL API.
 class Model(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def Predict(request,
+    def Predict(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/seldon.protos.Model/Predict',
+            "/seldon.protos.Model/Predict",
             proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
             proto_dot_prediction__pb2.SeldonMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
     @staticmethod
-    def SendFeedback(request,
+    def SendFeedback(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/seldon.protos.Model/SendFeedback',
+            "/seldon.protos.Model/SendFeedback",
             proto_dot_prediction__pb2.Feedback.SerializeToString,
             proto_dot_prediction__pb2.SeldonMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
     @staticmethod
-    def Metadata(request,
+    def Metadata(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/seldon.protos.Model/Metadata',
+            "/seldon.protos.Model/Metadata",
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             proto_dot_prediction__pb2.SeldonModelMetadata.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
 
 class RouterStub(object):
@@ -348,15 +446,15 @@ class RouterStub(object):
             channel: A grpc.Channel.
         """
         self.Route = channel.unary_unary(
-                '/seldon.protos.Router/Route',
-                request_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-                response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                )
+            "/seldon.protos.Router/Route",
+            request_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+            response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+        )
         self.SendFeedback = channel.unary_unary(
-                '/seldon.protos.Router/SendFeedback',
-                request_serializer=proto_dot_prediction__pb2.Feedback.SerializeToString,
-                response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                )
+            "/seldon.protos.Router/SendFeedback",
+            request_serializer=proto_dot_prediction__pb2.Feedback.SerializeToString,
+            response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+        )
 
 
 class RouterServicer(object):
@@ -365,71 +463,96 @@ class RouterServicer(object):
     def Route(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
     def SendFeedback(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
 
 def add_RouterServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Route': grpc.unary_unary_rpc_method_handler(
-                    servicer.Route,
-                    request_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                    response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-            ),
-            'SendFeedback': grpc.unary_unary_rpc_method_handler(
-                    servicer.SendFeedback,
-                    request_deserializer=proto_dot_prediction__pb2.Feedback.FromString,
-                    response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-            ),
+        "Route": grpc.unary_unary_rpc_method_handler(
+            servicer.Route,
+            request_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+            response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+        ),
+        "SendFeedback": grpc.unary_unary_rpc_method_handler(
+            servicer.SendFeedback,
+            request_deserializer=proto_dot_prediction__pb2.Feedback.FromString,
+            response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+        ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'seldon.protos.Router', rpc_method_handlers)
+        "seldon.protos.Router", rpc_method_handlers
+    )
     server.add_generic_rpc_handlers((generic_handler,))
 
 
- # This class is part of an EXPERIMENTAL API.
+# This class is part of an EXPERIMENTAL API.
 class Router(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def Route(request,
+    def Route(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/seldon.protos.Router/Route',
+            "/seldon.protos.Router/Route",
             proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
             proto_dot_prediction__pb2.SeldonMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
     @staticmethod
-    def SendFeedback(request,
+    def SendFeedback(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/seldon.protos.Router/SendFeedback',
+            "/seldon.protos.Router/SendFeedback",
             proto_dot_prediction__pb2.Feedback.SerializeToString,
             proto_dot_prediction__pb2.SeldonMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
 
 class TransformerStub(object):
@@ -442,10 +565,10 @@ class TransformerStub(object):
             channel: A grpc.Channel.
         """
         self.TransformInput = channel.unary_unary(
-                '/seldon.protos.Transformer/TransformInput',
-                request_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-                response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                )
+            "/seldon.protos.Transformer/TransformInput",
+            request_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+            response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+        )
 
 
 class TransformerServicer(object):
@@ -454,43 +577,56 @@ class TransformerServicer(object):
     def TransformInput(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
 
 def add_TransformerServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'TransformInput': grpc.unary_unary_rpc_method_handler(
-                    servicer.TransformInput,
-                    request_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                    response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-            ),
+        "TransformInput": grpc.unary_unary_rpc_method_handler(
+            servicer.TransformInput,
+            request_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+            response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+        ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'seldon.protos.Transformer', rpc_method_handlers)
+        "seldon.protos.Transformer", rpc_method_handlers
+    )
     server.add_generic_rpc_handlers((generic_handler,))
 
 
- # This class is part of an EXPERIMENTAL API.
+# This class is part of an EXPERIMENTAL API.
 class Transformer(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def TransformInput(request,
+    def TransformInput(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/seldon.protos.Transformer/TransformInput',
+            "/seldon.protos.Transformer/TransformInput",
             proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
             proto_dot_prediction__pb2.SeldonMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
 
 class OutputTransformerStub(object):
@@ -503,10 +639,10 @@ class OutputTransformerStub(object):
             channel: A grpc.Channel.
         """
         self.TransformOutput = channel.unary_unary(
-                '/seldon.protos.OutputTransformer/TransformOutput',
-                request_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-                response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                )
+            "/seldon.protos.OutputTransformer/TransformOutput",
+            request_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+            response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+        )
 
 
 class OutputTransformerServicer(object):
@@ -515,43 +651,56 @@ class OutputTransformerServicer(object):
     def TransformOutput(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
 
 def add_OutputTransformerServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'TransformOutput': grpc.unary_unary_rpc_method_handler(
-                    servicer.TransformOutput,
-                    request_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                    response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-            ),
+        "TransformOutput": grpc.unary_unary_rpc_method_handler(
+            servicer.TransformOutput,
+            request_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+            response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+        ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'seldon.protos.OutputTransformer', rpc_method_handlers)
+        "seldon.protos.OutputTransformer", rpc_method_handlers
+    )
     server.add_generic_rpc_handlers((generic_handler,))
 
 
- # This class is part of an EXPERIMENTAL API.
+# This class is part of an EXPERIMENTAL API.
 class OutputTransformer(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def TransformOutput(request,
+    def TransformOutput(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/seldon.protos.OutputTransformer/TransformOutput',
+            "/seldon.protos.OutputTransformer/TransformOutput",
             proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
             proto_dot_prediction__pb2.SeldonMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
 
 class CombinerStub(object):
@@ -564,10 +713,10 @@ class CombinerStub(object):
             channel: A grpc.Channel.
         """
         self.Aggregate = channel.unary_unary(
-                '/seldon.protos.Combiner/Aggregate',
-                request_serializer=proto_dot_prediction__pb2.SeldonMessageList.SerializeToString,
-                response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                )
+            "/seldon.protos.Combiner/Aggregate",
+            request_serializer=proto_dot_prediction__pb2.SeldonMessageList.SerializeToString,
+            response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+        )
 
 
 class CombinerServicer(object):
@@ -576,43 +725,56 @@ class CombinerServicer(object):
     def Aggregate(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
 
 def add_CombinerServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Aggregate': grpc.unary_unary_rpc_method_handler(
-                    servicer.Aggregate,
-                    request_deserializer=proto_dot_prediction__pb2.SeldonMessageList.FromString,
-                    response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-            ),
+        "Aggregate": grpc.unary_unary_rpc_method_handler(
+            servicer.Aggregate,
+            request_deserializer=proto_dot_prediction__pb2.SeldonMessageList.FromString,
+            response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+        ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'seldon.protos.Combiner', rpc_method_handlers)
+        "seldon.protos.Combiner", rpc_method_handlers
+    )
     server.add_generic_rpc_handlers((generic_handler,))
 
 
- # This class is part of an EXPERIMENTAL API.
+# This class is part of an EXPERIMENTAL API.
 class Combiner(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def Aggregate(request,
+    def Aggregate(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/seldon.protos.Combiner/Aggregate',
+            "/seldon.protos.Combiner/Aggregate",
             proto_dot_prediction__pb2.SeldonMessageList.SerializeToString,
             proto_dot_prediction__pb2.SeldonMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
 
 class SeldonStub(object):
@@ -625,25 +787,25 @@ class SeldonStub(object):
             channel: A grpc.Channel.
         """
         self.Predict = channel.unary_unary(
-                '/seldon.protos.Seldon/Predict',
-                request_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-                response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                )
+            "/seldon.protos.Seldon/Predict",
+            request_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+            response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+        )
         self.SendFeedback = channel.unary_unary(
-                '/seldon.protos.Seldon/SendFeedback',
-                request_serializer=proto_dot_prediction__pb2.Feedback.SerializeToString,
-                response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                )
+            "/seldon.protos.Seldon/SendFeedback",
+            request_serializer=proto_dot_prediction__pb2.Feedback.SerializeToString,
+            response_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+        )
         self.ModelMetadata = channel.unary_unary(
-                '/seldon.protos.Seldon/ModelMetadata',
-                request_serializer=proto_dot_prediction__pb2.SeldonModelMetadataRequest.SerializeToString,
-                response_deserializer=proto_dot_prediction__pb2.SeldonModelMetadata.FromString,
-                )
+            "/seldon.protos.Seldon/ModelMetadata",
+            request_serializer=proto_dot_prediction__pb2.SeldonModelMetadataRequest.SerializeToString,
+            response_deserializer=proto_dot_prediction__pb2.SeldonModelMetadata.FromString,
+        )
         self.GraphMetadata = channel.unary_unary(
-                '/seldon.protos.Seldon/GraphMetadata',
-                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-                response_deserializer=proto_dot_prediction__pb2.SeldonGraphMetadata.FromString,
-                )
+            "/seldon.protos.Seldon/GraphMetadata",
+            request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            response_deserializer=proto_dot_prediction__pb2.SeldonGraphMetadata.FromString,
+        )
 
 
 class SeldonServicer(object):
@@ -652,124 +814,173 @@ class SeldonServicer(object):
     def Predict(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
     def SendFeedback(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
     def ModelMetadata(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
     def GraphMetadata(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
 
 def add_SeldonServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Predict': grpc.unary_unary_rpc_method_handler(
-                    servicer.Predict,
-                    request_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
-                    response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-            ),
-            'SendFeedback': grpc.unary_unary_rpc_method_handler(
-                    servicer.SendFeedback,
-                    request_deserializer=proto_dot_prediction__pb2.Feedback.FromString,
-                    response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
-            ),
-            'ModelMetadata': grpc.unary_unary_rpc_method_handler(
-                    servicer.ModelMetadata,
-                    request_deserializer=proto_dot_prediction__pb2.SeldonModelMetadataRequest.FromString,
-                    response_serializer=proto_dot_prediction__pb2.SeldonModelMetadata.SerializeToString,
-            ),
-            'GraphMetadata': grpc.unary_unary_rpc_method_handler(
-                    servicer.GraphMetadata,
-                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                    response_serializer=proto_dot_prediction__pb2.SeldonGraphMetadata.SerializeToString,
-            ),
+        "Predict": grpc.unary_unary_rpc_method_handler(
+            servicer.Predict,
+            request_deserializer=proto_dot_prediction__pb2.SeldonMessage.FromString,
+            response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+        ),
+        "SendFeedback": grpc.unary_unary_rpc_method_handler(
+            servicer.SendFeedback,
+            request_deserializer=proto_dot_prediction__pb2.Feedback.FromString,
+            response_serializer=proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
+        ),
+        "ModelMetadata": grpc.unary_unary_rpc_method_handler(
+            servicer.ModelMetadata,
+            request_deserializer=proto_dot_prediction__pb2.SeldonModelMetadataRequest.FromString,
+            response_serializer=proto_dot_prediction__pb2.SeldonModelMetadata.SerializeToString,
+        ),
+        "GraphMetadata": grpc.unary_unary_rpc_method_handler(
+            servicer.GraphMetadata,
+            request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            response_serializer=proto_dot_prediction__pb2.SeldonGraphMetadata.SerializeToString,
+        ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'seldon.protos.Seldon', rpc_method_handlers)
+        "seldon.protos.Seldon", rpc_method_handlers
+    )
     server.add_generic_rpc_handlers((generic_handler,))
 
 
- # This class is part of an EXPERIMENTAL API.
+# This class is part of an EXPERIMENTAL API.
 class Seldon(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def Predict(request,
+    def Predict(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/seldon.protos.Seldon/Predict',
+            "/seldon.protos.Seldon/Predict",
             proto_dot_prediction__pb2.SeldonMessage.SerializeToString,
             proto_dot_prediction__pb2.SeldonMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
     @staticmethod
-    def SendFeedback(request,
+    def SendFeedback(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/seldon.protos.Seldon/SendFeedback',
+            "/seldon.protos.Seldon/SendFeedback",
             proto_dot_prediction__pb2.Feedback.SerializeToString,
             proto_dot_prediction__pb2.SeldonMessage.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
     @staticmethod
-    def ModelMetadata(request,
+    def ModelMetadata(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/seldon.protos.Seldon/ModelMetadata',
+            "/seldon.protos.Seldon/ModelMetadata",
             proto_dot_prediction__pb2.SeldonModelMetadataRequest.SerializeToString,
             proto_dot_prediction__pb2.SeldonModelMetadata.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
     @staticmethod
-    def GraphMetadata(request,
+    def GraphMetadata(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/seldon.protos.Seldon/GraphMetadata',
+            "/seldon.protos.Seldon/GraphMetadata",
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             proto_dot_prediction__pb2.SeldonGraphMetadata.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )

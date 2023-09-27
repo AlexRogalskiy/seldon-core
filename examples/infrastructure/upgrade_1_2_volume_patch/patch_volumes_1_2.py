@@ -16,7 +16,6 @@ def run(cmd: str):
 
 
 def patch_volumes_seldon_1_2():
-
     namespaces = run("kubectl get ns -o=name")
 
     for namespace in namespaces.split():

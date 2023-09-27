@@ -7,7 +7,6 @@ dirname = os.path.dirname(__file__)
 
 
 class Model:
-
     def __init__(self, *args, **kwargs):
         """Deserilize preprocessor and model."""
         with open(os.path.join(dirname, "preprocessor.dill"), "rb") as prep_f:

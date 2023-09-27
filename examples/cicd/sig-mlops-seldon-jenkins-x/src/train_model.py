@@ -7,7 +7,6 @@ import joblib
 
 
 def fetch_data():
-
     categories = ["alt.atheism", "soc.religion.christian", "comp.graphics", "sci.med"]
 
     twenty_train = fetch_20newsgroups(

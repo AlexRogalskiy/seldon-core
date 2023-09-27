@@ -18,7 +18,7 @@ def nlp_pipeline(
     output_path="data/output-data.txt",
 ):
     """
-    Pipeline 
+    Pipeline
     """
 
     vop = dsl.VolumeOp(
