@@ -47,7 +47,6 @@ from typing_extensions import (
     Literal as typing_extensions___Literal,
 )
 
-
 builtin___bool = bool
 builtin___bytes = bytes
 builtin___float = float
@@ -55,7 +54,6 @@ builtin___int = int
 if sys.version_info < (3,):
     builtin___buffer = buffer
     builtin___unicode = unicode
-
 
 DESCRIPTOR: google___protobuf___descriptor___FileDescriptor = ...
 
@@ -66,112 +64,212 @@ class SeldonMessage(google___protobuf___message___Message):
 
     @property
     def status(self) -> type___Status: ...
-
     @property
     def meta(self) -> type___Meta: ...
-
     @property
     def data(self) -> type___DefaultData: ...
-
     @property
     def jsonData(self) -> google___protobuf___struct_pb2___Value: ...
-
     @property
     def customData(self) -> google___protobuf___any_pb2___Any: ...
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        status : typing___Optional[type___Status] = None,
-        meta : typing___Optional[type___Meta] = None,
-        data : typing___Optional[type___DefaultData] = None,
-        binData : typing___Optional[builtin___bytes] = None,
-        strData : typing___Optional[typing___Text] = None,
-        jsonData : typing___Optional[google___protobuf___struct_pb2___Value] = None,
-        customData : typing___Optional[google___protobuf___any_pb2___Any] = None,
-        ) -> None: ...
+        status: typing___Optional[type___Status] = None,
+        meta: typing___Optional[type___Meta] = None,
+        data: typing___Optional[type___DefaultData] = None,
+        binData: typing___Optional[builtin___bytes] = None,
+        strData: typing___Optional[typing___Text] = None,
+        jsonData: typing___Optional[google___protobuf___struct_pb2___Value] = None,
+        customData: typing___Optional[google___protobuf___any_pb2___Any] = None,
+    ) -> None: ...
     if sys.version_info >= (3,):
         @classmethod
         def FromString(cls, s: builtin___bytes) -> SeldonMessage: ...
     else:
         @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> SeldonMessage: ...
-    def HasField(self, field_name: typing_extensions___Literal[u"binData",b"binData",u"customData",b"customData",u"data",b"data",u"data_oneof",b"data_oneof",u"jsonData",b"jsonData",u"meta",b"meta",u"status",b"status",u"strData",b"strData"]) -> builtin___bool: ...
-    def ClearField(self, field_name: typing_extensions___Literal[u"binData",b"binData",u"customData",b"customData",u"data",b"data",u"data_oneof",b"data_oneof",u"jsonData",b"jsonData",u"meta",b"meta",u"status",b"status",u"strData",b"strData"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions___Literal[u"data_oneof",b"data_oneof"]) -> typing_extensions___Literal["data","binData","strData","jsonData","customData"]: ...
+        def FromString(
+            cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]
+        ) -> SeldonMessage: ...
+
+    def HasField(
+        self,
+        field_name: typing_extensions___Literal[
+            "binData",
+            b"binData",
+            "customData",
+            b"customData",
+            "data",
+            b"data",
+            "data_oneof",
+            b"data_oneof",
+            "jsonData",
+            b"jsonData",
+            "meta",
+            b"meta",
+            "status",
+            b"status",
+            "strData",
+            b"strData",
+        ],
+    ) -> builtin___bool: ...
+    def ClearField(
+        self,
+        field_name: typing_extensions___Literal[
+            "binData",
+            b"binData",
+            "customData",
+            b"customData",
+            "data",
+            b"data",
+            "data_oneof",
+            b"data_oneof",
+            "jsonData",
+            b"jsonData",
+            "meta",
+            b"meta",
+            "status",
+            b"status",
+            "strData",
+            b"strData",
+        ],
+    ) -> None: ...
+    def WhichOneof(
+        self, oneof_group: typing_extensions___Literal["data_oneof", b"data_oneof"]
+    ) -> typing_extensions___Literal[
+        "data", "binData", "strData", "jsonData", "customData"
+    ]: ...
+
 type___SeldonMessage = SeldonMessage
 
 class DefaultData(google___protobuf___message___Message):
     DESCRIPTOR: google___protobuf___descriptor___Descriptor = ...
-    names: google___protobuf___internal___containers___RepeatedScalarFieldContainer[typing___Text] = ...
+    names: google___protobuf___internal___containers___RepeatedScalarFieldContainer[
+        typing___Text
+    ] = ...
 
     @property
     def tensor(self) -> type___Tensor: ...
-
     @property
     def ndarray(self) -> google___protobuf___struct_pb2___ListValue: ...
-
     @property
     def tftensor(self) -> tensorflow___core___framework___tensor_pb2___TensorProto: ...
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        names : typing___Optional[typing___Iterable[typing___Text]] = None,
-        tensor : typing___Optional[type___Tensor] = None,
-        ndarray : typing___Optional[google___protobuf___struct_pb2___ListValue] = None,
-        tftensor : typing___Optional[tensorflow___core___framework___tensor_pb2___TensorProto] = None,
-        ) -> None: ...
+        names: typing___Optional[typing___Iterable[typing___Text]] = None,
+        tensor: typing___Optional[type___Tensor] = None,
+        ndarray: typing___Optional[google___protobuf___struct_pb2___ListValue] = None,
+        tftensor: typing___Optional[
+            tensorflow___core___framework___tensor_pb2___TensorProto
+        ] = None,
+    ) -> None: ...
     if sys.version_info >= (3,):
         @classmethod
         def FromString(cls, s: builtin___bytes) -> DefaultData: ...
     else:
         @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> DefaultData: ...
-    def HasField(self, field_name: typing_extensions___Literal[u"data_oneof",b"data_oneof",u"ndarray",b"ndarray",u"tensor",b"tensor",u"tftensor",b"tftensor"]) -> builtin___bool: ...
-    def ClearField(self, field_name: typing_extensions___Literal[u"data_oneof",b"data_oneof",u"names",b"names",u"ndarray",b"ndarray",u"tensor",b"tensor",u"tftensor",b"tftensor"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions___Literal[u"data_oneof",b"data_oneof"]) -> typing_extensions___Literal["tensor","ndarray","tftensor"]: ...
+        def FromString(
+            cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]
+        ) -> DefaultData: ...
+
+    def HasField(
+        self,
+        field_name: typing_extensions___Literal[
+            "data_oneof",
+            b"data_oneof",
+            "ndarray",
+            b"ndarray",
+            "tensor",
+            b"tensor",
+            "tftensor",
+            b"tftensor",
+        ],
+    ) -> builtin___bool: ...
+    def ClearField(
+        self,
+        field_name: typing_extensions___Literal[
+            "data_oneof",
+            b"data_oneof",
+            "names",
+            b"names",
+            "ndarray",
+            b"ndarray",
+            "tensor",
+            b"tensor",
+            "tftensor",
+            b"tftensor",
+        ],
+    ) -> None: ...
+    def WhichOneof(
+        self, oneof_group: typing_extensions___Literal["data_oneof", b"data_oneof"]
+    ) -> typing_extensions___Literal["tensor", "ndarray", "tftensor"]: ...
+
 type___DefaultData = DefaultData
 
 class Tensor(google___protobuf___message___Message):
     DESCRIPTOR: google___protobuf___descriptor___Descriptor = ...
-    shape: google___protobuf___internal___containers___RepeatedScalarFieldContainer[builtin___int] = ...
-    values: google___protobuf___internal___containers___RepeatedScalarFieldContainer[builtin___float] = ...
+    shape: google___protobuf___internal___containers___RepeatedScalarFieldContainer[
+        builtin___int
+    ] = ...
+    values: google___protobuf___internal___containers___RepeatedScalarFieldContainer[
+        builtin___float
+    ] = ...
 
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        shape : typing___Optional[typing___Iterable[builtin___int]] = None,
-        values : typing___Optional[typing___Iterable[builtin___float]] = None,
-        ) -> None: ...
+        shape: typing___Optional[typing___Iterable[builtin___int]] = None,
+        values: typing___Optional[typing___Iterable[builtin___float]] = None,
+    ) -> None: ...
     if sys.version_info >= (3,):
         @classmethod
         def FromString(cls, s: builtin___bytes) -> Tensor: ...
     else:
         @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> Tensor: ...
-    def ClearField(self, field_name: typing_extensions___Literal[u"shape",b"shape",u"values",b"values"]) -> None: ...
+        def FromString(
+            cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]
+        ) -> Tensor: ...
+
+    def ClearField(
+        self,
+        field_name: typing_extensions___Literal["shape", b"shape", "values", b"values"],
+    ) -> None: ...
+
 type___Tensor = Tensor
 
 class Meta(google___protobuf___message___Message):
     DESCRIPTOR: google___protobuf___descriptor___Descriptor = ...
+
     class TagsEntry(google___protobuf___message___Message):
         DESCRIPTOR: google___protobuf___descriptor___Descriptor = ...
         key: typing___Text = ...
 
         @property
         def value(self) -> google___protobuf___struct_pb2___Value: ...
-
-        def __init__(self,
+        def __init__(
+            self,
             *,
-            key : typing___Optional[typing___Text] = None,
-            value : typing___Optional[google___protobuf___struct_pb2___Value] = None,
-            ) -> None: ...
+            key: typing___Optional[typing___Text] = None,
+            value: typing___Optional[google___protobuf___struct_pb2___Value] = None,
+        ) -> None: ...
         if sys.version_info >= (3,):
             @classmethod
             def FromString(cls, s: builtin___bytes) -> Meta.TagsEntry: ...
         else:
             @classmethod
-            def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> Meta.TagsEntry: ...
-        def HasField(self, field_name: typing_extensions___Literal[u"value",b"value"]) -> builtin___bool: ...
-        def ClearField(self, field_name: typing_extensions___Literal[u"key",b"key",u"value",b"value"]) -> None: ...
+            def FromString(
+                cls,
+                s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode],
+            ) -> Meta.TagsEntry: ...
+
+        def HasField(
+            self, field_name: typing_extensions___Literal["value", b"value"]
+        ) -> builtin___bool: ...
+        def ClearField(
+            self,
+            field_name: typing_extensions___Literal["key", b"key", "value", b"value"],
+        ) -> None: ...
     type___TagsEntry = TagsEntry
 
     class RoutingEntry(google___protobuf___message___Message):
@@ -179,18 +277,26 @@ class Meta(google___protobuf___message___Message):
         key: typing___Text = ...
         value: builtin___int = ...
 
-        def __init__(self,
+        def __init__(
+            self,
             *,
-            key : typing___Optional[typing___Text] = None,
-            value : typing___Optional[builtin___int] = None,
-            ) -> None: ...
+            key: typing___Optional[typing___Text] = None,
+            value: typing___Optional[builtin___int] = None,
+        ) -> None: ...
         if sys.version_info >= (3,):
             @classmethod
             def FromString(cls, s: builtin___bytes) -> Meta.RoutingEntry: ...
         else:
             @classmethod
-            def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> Meta.RoutingEntry: ...
-        def ClearField(self, field_name: typing_extensions___Literal[u"key",b"key",u"value",b"value"]) -> None: ...
+            def FromString(
+                cls,
+                s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode],
+            ) -> Meta.RoutingEntry: ...
+
+        def ClearField(
+            self,
+            field_name: typing_extensions___Literal["key", b"key", "value", b"value"],
+        ) -> None: ...
     type___RoutingEntry = RoutingEntry
 
     class RequestPathEntry(google___protobuf___message___Message):
@@ -198,57 +304,99 @@ class Meta(google___protobuf___message___Message):
         key: typing___Text = ...
         value: typing___Text = ...
 
-        def __init__(self,
+        def __init__(
+            self,
             *,
-            key : typing___Optional[typing___Text] = None,
-            value : typing___Optional[typing___Text] = None,
-            ) -> None: ...
+            key: typing___Optional[typing___Text] = None,
+            value: typing___Optional[typing___Text] = None,
+        ) -> None: ...
         if sys.version_info >= (3,):
             @classmethod
             def FromString(cls, s: builtin___bytes) -> Meta.RequestPathEntry: ...
         else:
             @classmethod
-            def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> Meta.RequestPathEntry: ...
-        def ClearField(self, field_name: typing_extensions___Literal[u"key",b"key",u"value",b"value"]) -> None: ...
+            def FromString(
+                cls,
+                s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode],
+            ) -> Meta.RequestPathEntry: ...
+
+        def ClearField(
+            self,
+            field_name: typing_extensions___Literal["key", b"key", "value", b"value"],
+        ) -> None: ...
     type___RequestPathEntry = RequestPathEntry
 
     puid: typing___Text = ...
 
     @property
-    def tags(self) -> typing___MutableMapping[typing___Text, google___protobuf___struct_pb2___Value]: ...
-
+    def tags(
+        self,
+    ) -> typing___MutableMapping[
+        typing___Text, google___protobuf___struct_pb2___Value
+    ]: ...
     @property
     def routing(self) -> typing___MutableMapping[typing___Text, builtin___int]: ...
-
     @property
     def requestPath(self) -> typing___MutableMapping[typing___Text, typing___Text]: ...
-
     @property
-    def metrics(self) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[type___Metric]: ...
-
-    def __init__(self,
+    def metrics(
+        self,
+    ) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[
+        type___Metric
+    ]: ...
+    def __init__(
+        self,
         *,
-        puid : typing___Optional[typing___Text] = None,
-        tags : typing___Optional[typing___Mapping[typing___Text, google___protobuf___struct_pb2___Value]] = None,
-        routing : typing___Optional[typing___Mapping[typing___Text, builtin___int]] = None,
-        requestPath : typing___Optional[typing___Mapping[typing___Text, typing___Text]] = None,
-        metrics : typing___Optional[typing___Iterable[type___Metric]] = None,
-        ) -> None: ...
+        puid: typing___Optional[typing___Text] = None,
+        tags: typing___Optional[
+            typing___Mapping[typing___Text, google___protobuf___struct_pb2___Value]
+        ] = None,
+        routing: typing___Optional[
+            typing___Mapping[typing___Text, builtin___int]
+        ] = None,
+        requestPath: typing___Optional[
+            typing___Mapping[typing___Text, typing___Text]
+        ] = None,
+        metrics: typing___Optional[typing___Iterable[type___Metric]] = None,
+    ) -> None: ...
     if sys.version_info >= (3,):
         @classmethod
         def FromString(cls, s: builtin___bytes) -> Meta: ...
     else:
         @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> Meta: ...
-    def ClearField(self, field_name: typing_extensions___Literal[u"metrics",b"metrics",u"puid",b"puid",u"requestPath",b"requestPath",u"routing",b"routing",u"tags",b"tags"]) -> None: ...
+        def FromString(
+            cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]
+        ) -> Meta: ...
+
+    def ClearField(
+        self,
+        field_name: typing_extensions___Literal[
+            "metrics",
+            b"metrics",
+            "puid",
+            b"puid",
+            "requestPath",
+            b"requestPath",
+            "routing",
+            b"routing",
+            "tags",
+            b"tags",
+        ],
+    ) -> None: ...
+
 type___Meta = Meta
 
 class Metric(google___protobuf___message___Message):
     DESCRIPTOR: google___protobuf___descriptor___Descriptor = ...
-    MetricTypeValue = typing___NewType('MetricTypeValue', builtin___int)
+    MetricTypeValue = typing___NewType("MetricTypeValue", builtin___int)
     type___MetricTypeValue = MetricTypeValue
     MetricType: _MetricType
-    class _MetricType(google___protobuf___internal___enum_type_wrapper____EnumTypeWrapper[Metric.MetricTypeValue]):
+
+    class _MetricType(
+        google___protobuf___internal___enum_type_wrapper____EnumTypeWrapper[
+            Metric.MetricTypeValue
+        ]
+    ):
         DESCRIPTOR: google___protobuf___descriptor___EnumDescriptor = ...
         COUNTER = typing___cast(Metric.MetricTypeValue, 0)
         GAUGE = typing___cast(Metric.MetricTypeValue, 1)
@@ -263,18 +411,26 @@ class Metric(google___protobuf___message___Message):
         key: typing___Text = ...
         value: typing___Text = ...
 
-        def __init__(self,
+        def __init__(
+            self,
             *,
-            key : typing___Optional[typing___Text] = None,
-            value : typing___Optional[typing___Text] = None,
-            ) -> None: ...
+            key: typing___Optional[typing___Text] = None,
+            value: typing___Optional[typing___Text] = None,
+        ) -> None: ...
         if sys.version_info >= (3,):
             @classmethod
             def FromString(cls, s: builtin___bytes) -> Metric.TagsEntry: ...
         else:
             @classmethod
-            def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> Metric.TagsEntry: ...
-        def ClearField(self, field_name: typing_extensions___Literal[u"key",b"key",u"value",b"value"]) -> None: ...
+            def FromString(
+                cls,
+                s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode],
+            ) -> Metric.TagsEntry: ...
+
+        def ClearField(
+            self,
+            field_name: typing_extensions___Literal["key", b"key", "value", b"value"],
+        ) -> None: ...
     type___TagsEntry = TagsEntry
 
     key: typing___Text = ...
@@ -283,48 +439,75 @@ class Metric(google___protobuf___message___Message):
 
     @property
     def tags(self) -> typing___MutableMapping[typing___Text, typing___Text]: ...
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        key : typing___Optional[typing___Text] = None,
-        type : typing___Optional[type___Metric.MetricTypeValue] = None,
-        value : typing___Optional[builtin___float] = None,
-        tags : typing___Optional[typing___Mapping[typing___Text, typing___Text]] = None,
-        ) -> None: ...
+        key: typing___Optional[typing___Text] = None,
+        type: typing___Optional[type___Metric.MetricTypeValue] = None,
+        value: typing___Optional[builtin___float] = None,
+        tags: typing___Optional[typing___Mapping[typing___Text, typing___Text]] = None,
+    ) -> None: ...
     if sys.version_info >= (3,):
         @classmethod
         def FromString(cls, s: builtin___bytes) -> Metric: ...
     else:
         @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> Metric: ...
-    def ClearField(self, field_name: typing_extensions___Literal[u"key",b"key",u"tags",b"tags",u"type",b"type",u"value",b"value"]) -> None: ...
+        def FromString(
+            cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]
+        ) -> Metric: ...
+
+    def ClearField(
+        self,
+        field_name: typing_extensions___Literal[
+            "key", b"key", "tags", b"tags", "type", b"type", "value", b"value"
+        ],
+    ) -> None: ...
+
 type___Metric = Metric
 
 class SeldonMessageList(google___protobuf___message___Message):
     DESCRIPTOR: google___protobuf___descriptor___Descriptor = ...
 
     @property
-    def seldonMessages(self) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[type___SeldonMessage]: ...
-
-    def __init__(self,
+    def seldonMessages(
+        self,
+    ) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[
+        type___SeldonMessage
+    ]: ...
+    def __init__(
+        self,
         *,
-        seldonMessages : typing___Optional[typing___Iterable[type___SeldonMessage]] = None,
-        ) -> None: ...
+        seldonMessages: typing___Optional[
+            typing___Iterable[type___SeldonMessage]
+        ] = None,
+    ) -> None: ...
     if sys.version_info >= (3,):
         @classmethod
         def FromString(cls, s: builtin___bytes) -> SeldonMessageList: ...
     else:
         @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> SeldonMessageList: ...
-    def ClearField(self, field_name: typing_extensions___Literal[u"seldonMessages",b"seldonMessages"]) -> None: ...
+        def FromString(
+            cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]
+        ) -> SeldonMessageList: ...
+
+    def ClearField(
+        self,
+        field_name: typing_extensions___Literal["seldonMessages", b"seldonMessages"],
+    ) -> None: ...
+
 type___SeldonMessageList = SeldonMessageList
 
 class Status(google___protobuf___message___Message):
     DESCRIPTOR: google___protobuf___descriptor___Descriptor = ...
-    StatusFlagValue = typing___NewType('StatusFlagValue', builtin___int)
+    StatusFlagValue = typing___NewType("StatusFlagValue", builtin___int)
     type___StatusFlagValue = StatusFlagValue
     StatusFlag: _StatusFlag
-    class _StatusFlag(google___protobuf___internal___enum_type_wrapper____EnumTypeWrapper[Status.StatusFlagValue]):
+
+    class _StatusFlag(
+        google___protobuf___internal___enum_type_wrapper____EnumTypeWrapper[
+            Status.StatusFlagValue
+        ]
+    ):
         DESCRIPTOR: google___protobuf___descriptor___EnumDescriptor = ...
         SUCCESS = typing___cast(Status.StatusFlagValue, 0)
         FAILURE = typing___cast(Status.StatusFlagValue, 1)
@@ -337,20 +520,30 @@ class Status(google___protobuf___message___Message):
     reason: typing___Text = ...
     status: type___Status.StatusFlagValue = ...
 
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        code : typing___Optional[builtin___int] = None,
-        info : typing___Optional[typing___Text] = None,
-        reason : typing___Optional[typing___Text] = None,
-        status : typing___Optional[type___Status.StatusFlagValue] = None,
-        ) -> None: ...
+        code: typing___Optional[builtin___int] = None,
+        info: typing___Optional[typing___Text] = None,
+        reason: typing___Optional[typing___Text] = None,
+        status: typing___Optional[type___Status.StatusFlagValue] = None,
+    ) -> None: ...
     if sys.version_info >= (3,):
         @classmethod
         def FromString(cls, s: builtin___bytes) -> Status: ...
     else:
         @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> Status: ...
-    def ClearField(self, field_name: typing_extensions___Literal[u"code",b"code",u"info",b"info",u"reason",b"reason",u"status",b"status"]) -> None: ...
+        def FromString(
+            cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]
+        ) -> Status: ...
+
+    def ClearField(
+        self,
+        field_name: typing_extensions___Literal[
+            "code", b"code", "info", b"info", "reason", b"reason", "status", b"status"
+        ],
+    ) -> None: ...
+
 type___Status = Status
 
 class Feedback(google___protobuf___message___Message):
@@ -359,28 +552,47 @@ class Feedback(google___protobuf___message___Message):
 
     @property
     def request(self) -> type___SeldonMessage: ...
-
     @property
     def response(self) -> type___SeldonMessage: ...
-
     @property
     def truth(self) -> type___SeldonMessage: ...
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        request : typing___Optional[type___SeldonMessage] = None,
-        response : typing___Optional[type___SeldonMessage] = None,
-        reward : typing___Optional[builtin___float] = None,
-        truth : typing___Optional[type___SeldonMessage] = None,
-        ) -> None: ...
+        request: typing___Optional[type___SeldonMessage] = None,
+        response: typing___Optional[type___SeldonMessage] = None,
+        reward: typing___Optional[builtin___float] = None,
+        truth: typing___Optional[type___SeldonMessage] = None,
+    ) -> None: ...
     if sys.version_info >= (3,):
         @classmethod
         def FromString(cls, s: builtin___bytes) -> Feedback: ...
     else:
         @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> Feedback: ...
-    def HasField(self, field_name: typing_extensions___Literal[u"request",b"request",u"response",b"response",u"truth",b"truth"]) -> builtin___bool: ...
-    def ClearField(self, field_name: typing_extensions___Literal[u"request",b"request",u"response",b"response",u"reward",b"reward",u"truth",b"truth"]) -> None: ...
+        def FromString(
+            cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]
+        ) -> Feedback: ...
+
+    def HasField(
+        self,
+        field_name: typing_extensions___Literal[
+            "request", b"request", "response", b"response", "truth", b"truth"
+        ],
+    ) -> builtin___bool: ...
+    def ClearField(
+        self,
+        field_name: typing_extensions___Literal[
+            "request",
+            b"request",
+            "response",
+            b"response",
+            "reward",
+            b"reward",
+            "truth",
+            b"truth",
+        ],
+    ) -> None: ...
+
 type___Feedback = Feedback
 
 class RequestResponse(google___protobuf___message___Message):
@@ -388,40 +600,60 @@ class RequestResponse(google___protobuf___message___Message):
 
     @property
     def request(self) -> type___SeldonMessage: ...
-
     @property
     def response(self) -> type___SeldonMessage: ...
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        request : typing___Optional[type___SeldonMessage] = None,
-        response : typing___Optional[type___SeldonMessage] = None,
-        ) -> None: ...
+        request: typing___Optional[type___SeldonMessage] = None,
+        response: typing___Optional[type___SeldonMessage] = None,
+    ) -> None: ...
     if sys.version_info >= (3,):
         @classmethod
         def FromString(cls, s: builtin___bytes) -> RequestResponse: ...
     else:
         @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> RequestResponse: ...
-    def HasField(self, field_name: typing_extensions___Literal[u"request",b"request",u"response",b"response"]) -> builtin___bool: ...
-    def ClearField(self, field_name: typing_extensions___Literal[u"request",b"request",u"response",b"response"]) -> None: ...
+        def FromString(
+            cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]
+        ) -> RequestResponse: ...
+
+    def HasField(
+        self,
+        field_name: typing_extensions___Literal[
+            "request", b"request", "response", b"response"
+        ],
+    ) -> builtin___bool: ...
+    def ClearField(
+        self,
+        field_name: typing_extensions___Literal[
+            "request", b"request", "response", b"response"
+        ],
+    ) -> None: ...
+
 type___RequestResponse = RequestResponse
 
 class SeldonModelMetadataRequest(google___protobuf___message___Message):
     DESCRIPTOR: google___protobuf___descriptor___Descriptor = ...
     name: typing___Text = ...
 
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        name : typing___Optional[typing___Text] = None,
-        ) -> None: ...
+        name: typing___Optional[typing___Text] = None,
+    ) -> None: ...
     if sys.version_info >= (3,):
         @classmethod
         def FromString(cls, s: builtin___bytes) -> SeldonModelMetadataRequest: ...
     else:
         @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> SeldonModelMetadataRequest: ...
-    def ClearField(self, field_name: typing_extensions___Literal[u"name",b"name"]) -> None: ...
+        def FromString(
+            cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]
+        ) -> SeldonModelMetadataRequest: ...
+
+    def ClearField(
+        self, field_name: typing_extensions___Literal["name", b"name"]
+    ) -> None: ...
+
 type___SeldonModelMetadataRequest = SeldonModelMetadataRequest
 
 class SeldonMessageMetadata(google___protobuf___message___Message):
@@ -429,128 +661,237 @@ class SeldonMessageMetadata(google___protobuf___message___Message):
     messagetype: typing___Text = ...
     name: typing___Text = ...
     datatype: typing___Text = ...
-    shape: google___protobuf___internal___containers___RepeatedScalarFieldContainer[builtin___int] = ...
+    shape: google___protobuf___internal___containers___RepeatedScalarFieldContainer[
+        builtin___int
+    ] = ...
 
     @property
     def schema(self) -> google___protobuf___struct_pb2___Value: ...
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        messagetype : typing___Optional[typing___Text] = None,
-        schema : typing___Optional[google___protobuf___struct_pb2___Value] = None,
-        name : typing___Optional[typing___Text] = None,
-        datatype : typing___Optional[typing___Text] = None,
-        shape : typing___Optional[typing___Iterable[builtin___int]] = None,
-        ) -> None: ...
+        messagetype: typing___Optional[typing___Text] = None,
+        schema: typing___Optional[google___protobuf___struct_pb2___Value] = None,
+        name: typing___Optional[typing___Text] = None,
+        datatype: typing___Optional[typing___Text] = None,
+        shape: typing___Optional[typing___Iterable[builtin___int]] = None,
+    ) -> None: ...
     if sys.version_info >= (3,):
         @classmethod
         def FromString(cls, s: builtin___bytes) -> SeldonMessageMetadata: ...
     else:
         @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> SeldonMessageMetadata: ...
-    def HasField(self, field_name: typing_extensions___Literal[u"schema",b"schema"]) -> builtin___bool: ...
-    def ClearField(self, field_name: typing_extensions___Literal[u"datatype",b"datatype",u"messagetype",b"messagetype",u"name",b"name",u"schema",b"schema",u"shape",b"shape"]) -> None: ...
+        def FromString(
+            cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]
+        ) -> SeldonMessageMetadata: ...
+
+    def HasField(
+        self, field_name: typing_extensions___Literal["schema", b"schema"]
+    ) -> builtin___bool: ...
+    def ClearField(
+        self,
+        field_name: typing_extensions___Literal[
+            "datatype",
+            b"datatype",
+            "messagetype",
+            b"messagetype",
+            "name",
+            b"name",
+            "schema",
+            b"schema",
+            "shape",
+            b"shape",
+        ],
+    ) -> None: ...
+
 type___SeldonMessageMetadata = SeldonMessageMetadata
 
 class SeldonModelMetadata(google___protobuf___message___Message):
     DESCRIPTOR: google___protobuf___descriptor___Descriptor = ...
+
     class CustomEntry(google___protobuf___message___Message):
         DESCRIPTOR: google___protobuf___descriptor___Descriptor = ...
         key: typing___Text = ...
         value: typing___Text = ...
 
-        def __init__(self,
+        def __init__(
+            self,
             *,
-            key : typing___Optional[typing___Text] = None,
-            value : typing___Optional[typing___Text] = None,
-            ) -> None: ...
+            key: typing___Optional[typing___Text] = None,
+            value: typing___Optional[typing___Text] = None,
+        ) -> None: ...
         if sys.version_info >= (3,):
             @classmethod
-            def FromString(cls, s: builtin___bytes) -> SeldonModelMetadata.CustomEntry: ...
+            def FromString(
+                cls, s: builtin___bytes
+            ) -> SeldonModelMetadata.CustomEntry: ...
         else:
             @classmethod
-            def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> SeldonModelMetadata.CustomEntry: ...
-        def ClearField(self, field_name: typing_extensions___Literal[u"key",b"key",u"value",b"value"]) -> None: ...
+            def FromString(
+                cls,
+                s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode],
+            ) -> SeldonModelMetadata.CustomEntry: ...
+
+        def ClearField(
+            self,
+            field_name: typing_extensions___Literal["key", b"key", "value", b"value"],
+        ) -> None: ...
     type___CustomEntry = CustomEntry
 
     name: typing___Text = ...
-    versions: google___protobuf___internal___containers___RepeatedScalarFieldContainer[typing___Text] = ...
+    versions: google___protobuf___internal___containers___RepeatedScalarFieldContainer[
+        typing___Text
+    ] = ...
     platform: typing___Text = ...
 
     @property
-    def inputs(self) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[type___SeldonMessageMetadata]: ...
-
+    def inputs(
+        self,
+    ) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[
+        type___SeldonMessageMetadata
+    ]: ...
     @property
-    def outputs(self) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[type___SeldonMessageMetadata]: ...
-
+    def outputs(
+        self,
+    ) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[
+        type___SeldonMessageMetadata
+    ]: ...
     @property
     def custom(self) -> typing___MutableMapping[typing___Text, typing___Text]: ...
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        name : typing___Optional[typing___Text] = None,
-        versions : typing___Optional[typing___Iterable[typing___Text]] = None,
-        platform : typing___Optional[typing___Text] = None,
-        inputs : typing___Optional[typing___Iterable[type___SeldonMessageMetadata]] = None,
-        outputs : typing___Optional[typing___Iterable[type___SeldonMessageMetadata]] = None,
-        custom : typing___Optional[typing___Mapping[typing___Text, typing___Text]] = None,
-        ) -> None: ...
+        name: typing___Optional[typing___Text] = None,
+        versions: typing___Optional[typing___Iterable[typing___Text]] = None,
+        platform: typing___Optional[typing___Text] = None,
+        inputs: typing___Optional[
+            typing___Iterable[type___SeldonMessageMetadata]
+        ] = None,
+        outputs: typing___Optional[
+            typing___Iterable[type___SeldonMessageMetadata]
+        ] = None,
+        custom: typing___Optional[
+            typing___Mapping[typing___Text, typing___Text]
+        ] = None,
+    ) -> None: ...
     if sys.version_info >= (3,):
         @classmethod
         def FromString(cls, s: builtin___bytes) -> SeldonModelMetadata: ...
     else:
         @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> SeldonModelMetadata: ...
-    def ClearField(self, field_name: typing_extensions___Literal[u"custom",b"custom",u"inputs",b"inputs",u"name",b"name",u"outputs",b"outputs",u"platform",b"platform",u"versions",b"versions"]) -> None: ...
+        def FromString(
+            cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]
+        ) -> SeldonModelMetadata: ...
+
+    def ClearField(
+        self,
+        field_name: typing_extensions___Literal[
+            "custom",
+            b"custom",
+            "inputs",
+            b"inputs",
+            "name",
+            b"name",
+            "outputs",
+            b"outputs",
+            "platform",
+            b"platform",
+            "versions",
+            b"versions",
+        ],
+    ) -> None: ...
+
 type___SeldonModelMetadata = SeldonModelMetadata
 
 class SeldonGraphMetadata(google___protobuf___message___Message):
     DESCRIPTOR: google___protobuf___descriptor___Descriptor = ...
+
     class ModelsEntry(google___protobuf___message___Message):
         DESCRIPTOR: google___protobuf___descriptor___Descriptor = ...
         key: typing___Text = ...
 
         @property
         def value(self) -> type___SeldonModelMetadata: ...
-
-        def __init__(self,
+        def __init__(
+            self,
             *,
-            key : typing___Optional[typing___Text] = None,
-            value : typing___Optional[type___SeldonModelMetadata] = None,
-            ) -> None: ...
+            key: typing___Optional[typing___Text] = None,
+            value: typing___Optional[type___SeldonModelMetadata] = None,
+        ) -> None: ...
         if sys.version_info >= (3,):
             @classmethod
-            def FromString(cls, s: builtin___bytes) -> SeldonGraphMetadata.ModelsEntry: ...
+            def FromString(
+                cls, s: builtin___bytes
+            ) -> SeldonGraphMetadata.ModelsEntry: ...
         else:
             @classmethod
-            def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> SeldonGraphMetadata.ModelsEntry: ...
-        def HasField(self, field_name: typing_extensions___Literal[u"value",b"value"]) -> builtin___bool: ...
-        def ClearField(self, field_name: typing_extensions___Literal[u"key",b"key",u"value",b"value"]) -> None: ...
+            def FromString(
+                cls,
+                s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode],
+            ) -> SeldonGraphMetadata.ModelsEntry: ...
+
+        def HasField(
+            self, field_name: typing_extensions___Literal["value", b"value"]
+        ) -> builtin___bool: ...
+        def ClearField(
+            self,
+            field_name: typing_extensions___Literal["key", b"key", "value", b"value"],
+        ) -> None: ...
     type___ModelsEntry = ModelsEntry
 
     name: typing___Text = ...
 
     @property
-    def models(self) -> typing___MutableMapping[typing___Text, type___SeldonModelMetadata]: ...
-
+    def models(
+        self,
+    ) -> typing___MutableMapping[typing___Text, type___SeldonModelMetadata]: ...
     @property
-    def inputs(self) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[type___SeldonMessageMetadata]: ...
-
+    def inputs(
+        self,
+    ) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[
+        type___SeldonMessageMetadata
+    ]: ...
     @property
-    def outputs(self) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[type___SeldonMessageMetadata]: ...
-
-    def __init__(self,
+    def outputs(
+        self,
+    ) -> google___protobuf___internal___containers___RepeatedCompositeFieldContainer[
+        type___SeldonMessageMetadata
+    ]: ...
+    def __init__(
+        self,
         *,
-        name : typing___Optional[typing___Text] = None,
-        models : typing___Optional[typing___Mapping[typing___Text, type___SeldonModelMetadata]] = None,
-        inputs : typing___Optional[typing___Iterable[type___SeldonMessageMetadata]] = None,
-        outputs : typing___Optional[typing___Iterable[type___SeldonMessageMetadata]] = None,
-        ) -> None: ...
+        name: typing___Optional[typing___Text] = None,
+        models: typing___Optional[
+            typing___Mapping[typing___Text, type___SeldonModelMetadata]
+        ] = None,
+        inputs: typing___Optional[
+            typing___Iterable[type___SeldonMessageMetadata]
+        ] = None,
+        outputs: typing___Optional[
+            typing___Iterable[type___SeldonMessageMetadata]
+        ] = None,
+    ) -> None: ...
     if sys.version_info >= (3,):
         @classmethod
         def FromString(cls, s: builtin___bytes) -> SeldonGraphMetadata: ...
     else:
         @classmethod
-        def FromString(cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]) -> SeldonGraphMetadata: ...
-    def ClearField(self, field_name: typing_extensions___Literal[u"inputs",b"inputs",u"models",b"models",u"name",b"name",u"outputs",b"outputs"]) -> None: ...
+        def FromString(
+            cls, s: typing___Union[builtin___bytes, builtin___buffer, builtin___unicode]
+        ) -> SeldonGraphMetadata: ...
+
+    def ClearField(
+        self,
+        field_name: typing_extensions___Literal[
+            "inputs",
+            b"inputs",
+            "models",
+            b"models",
+            "name",
+            b"name",
+            "outputs",
+            b"outputs",
+        ],
+    ) -> None: ...
+
 type___SeldonGraphMetadata = SeldonGraphMetadata

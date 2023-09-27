@@ -25,7 +25,7 @@ def nlp_pipeline(
     batch_size="100",
 ):
     """
-    Pipeline 
+    Pipeline
     """
     vop = dsl.VolumeOp(
         name="my-pvc", resource_name="my-pvc", modes=dsl.VOLUME_MODE_RWO, size="20Mi"

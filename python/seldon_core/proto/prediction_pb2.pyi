@@ -29,32 +29,73 @@ class SeldonMessage(google.protobuf.message.Message):
 
     @property
     def status(self) -> global___Status: ...
-
     @property
     def meta(self) -> global___Meta: ...
-
     @property
     def data(self) -> global___DefaultData: ...
-
     @property
     def jsonData(self) -> google.protobuf.struct_pb2.Value: ...
-
     @property
     def customData(self) -> google.protobuf.any_pb2.Any: ...
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        status : typing.Optional[global___Status] = ...,
-        meta : typing.Optional[global___Meta] = ...,
-        data : typing.Optional[global___DefaultData] = ...,
-        binData : builtins.bytes = ...,
-        strData : typing.Text = ...,
-        jsonData : typing.Optional[google.protobuf.struct_pb2.Value] = ...,
-        customData : typing.Optional[google.protobuf.any_pb2.Any] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal[u"binData",b"binData",u"customData",b"customData",u"data",b"data",u"data_oneof",b"data_oneof",u"jsonData",b"jsonData",u"meta",b"meta",u"status",b"status",u"strData",b"strData"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal[u"binData",b"binData",u"customData",b"customData",u"data",b"data",u"data_oneof",b"data_oneof",u"jsonData",b"jsonData",u"meta",b"meta",u"status",b"status",u"strData",b"strData"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal[u"data_oneof",b"data_oneof"]) -> typing_extensions.Literal["data","binData","strData","jsonData","customData"]: ...
+        status: typing.Optional[global___Status] = ...,
+        meta: typing.Optional[global___Meta] = ...,
+        data: typing.Optional[global___DefaultData] = ...,
+        binData: builtins.bytes = ...,
+        strData: typing.Text = ...,
+        jsonData: typing.Optional[google.protobuf.struct_pb2.Value] = ...,
+        customData: typing.Optional[google.protobuf.any_pb2.Any] = ...,
+    ) -> None: ...
+    def HasField(
+        self,
+        field_name: typing_extensions.Literal[
+            "binData",
+            b"binData",
+            "customData",
+            b"customData",
+            "data",
+            b"data",
+            "data_oneof",
+            b"data_oneof",
+            "jsonData",
+            b"jsonData",
+            "meta",
+            b"meta",
+            "status",
+            b"status",
+            "strData",
+            b"strData",
+        ],
+    ) -> builtins.bool: ...
+    def ClearField(
+        self,
+        field_name: typing_extensions.Literal[
+            "binData",
+            b"binData",
+            "customData",
+            b"customData",
+            "data",
+            b"data",
+            "data_oneof",
+            b"data_oneof",
+            "jsonData",
+            b"jsonData",
+            "meta",
+            b"meta",
+            "status",
+            b"status",
+            "strData",
+            b"strData",
+        ],
+    ) -> None: ...
+    def WhichOneof(
+        self, oneof_group: typing_extensions.Literal["data_oneof", b"data_oneof"]
+    ) -> typing_extensions.Literal[
+        "data", "binData", "strData", "jsonData", "customData"
+    ]: ...
+
 global___SeldonMessage = SeldonMessage
 
 class DefaultData(google.protobuf.message.Message):
@@ -63,46 +104,87 @@ class DefaultData(google.protobuf.message.Message):
     TENSOR_FIELD_NUMBER: builtins.int
     NDARRAY_FIELD_NUMBER: builtins.int
     TFTENSOR_FIELD_NUMBER: builtins.int
-    names: google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text] = ...
+    names: google.protobuf.internal.containers.RepeatedScalarFieldContainer[
+        typing.Text
+    ] = ...
 
     @property
     def tensor(self) -> global___Tensor: ...
-
     @property
     def ndarray(self) -> google.protobuf.struct_pb2.ListValue: ...
-
     @property
     def tftensor(self) -> tensorflow.core.framework.tensor_pb2.TensorProto: ...
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        names : typing.Optional[typing.Iterable[typing.Text]] = ...,
-        tensor : typing.Optional[global___Tensor] = ...,
-        ndarray : typing.Optional[google.protobuf.struct_pb2.ListValue] = ...,
-        tftensor : typing.Optional[tensorflow.core.framework.tensor_pb2.TensorProto] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal[u"data_oneof",b"data_oneof",u"ndarray",b"ndarray",u"tensor",b"tensor",u"tftensor",b"tftensor"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal[u"data_oneof",b"data_oneof",u"names",b"names",u"ndarray",b"ndarray",u"tensor",b"tensor",u"tftensor",b"tftensor"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing_extensions.Literal[u"data_oneof",b"data_oneof"]) -> typing_extensions.Literal["tensor","ndarray","tftensor"]: ...
+        names: typing.Optional[typing.Iterable[typing.Text]] = ...,
+        tensor: typing.Optional[global___Tensor] = ...,
+        ndarray: typing.Optional[google.protobuf.struct_pb2.ListValue] = ...,
+        tftensor: typing.Optional[
+            tensorflow.core.framework.tensor_pb2.TensorProto
+        ] = ...,
+    ) -> None: ...
+    def HasField(
+        self,
+        field_name: typing_extensions.Literal[
+            "data_oneof",
+            b"data_oneof",
+            "ndarray",
+            b"ndarray",
+            "tensor",
+            b"tensor",
+            "tftensor",
+            b"tftensor",
+        ],
+    ) -> builtins.bool: ...
+    def ClearField(
+        self,
+        field_name: typing_extensions.Literal[
+            "data_oneof",
+            b"data_oneof",
+            "names",
+            b"names",
+            "ndarray",
+            b"ndarray",
+            "tensor",
+            b"tensor",
+            "tftensor",
+            b"tftensor",
+        ],
+    ) -> None: ...
+    def WhichOneof(
+        self, oneof_group: typing_extensions.Literal["data_oneof", b"data_oneof"]
+    ) -> typing_extensions.Literal["tensor", "ndarray", "tftensor"]: ...
+
 global___DefaultData = DefaultData
 
 class Tensor(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor = ...
     SHAPE_FIELD_NUMBER: builtins.int
     VALUES_FIELD_NUMBER: builtins.int
-    shape: google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int] = ...
-    values: google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.float] = ...
+    shape: google.protobuf.internal.containers.RepeatedScalarFieldContainer[
+        builtins.int
+    ] = ...
+    values: google.protobuf.internal.containers.RepeatedScalarFieldContainer[
+        builtins.float
+    ] = ...
 
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        shape : typing.Optional[typing.Iterable[builtins.int]] = ...,
-        values : typing.Optional[typing.Iterable[builtins.float]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal[u"shape",b"shape",u"values",b"values"]) -> None: ...
+        shape: typing.Optional[typing.Iterable[builtins.int]] = ...,
+        values: typing.Optional[typing.Iterable[builtins.float]] = ...,
+    ) -> None: ...
+    def ClearField(
+        self,
+        field_name: typing_extensions.Literal["shape", b"shape", "values", b"values"],
+    ) -> None: ...
+
 global___Tensor = Tensor
 
 class Meta(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor = ...
+
     class TagsEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor = ...
         KEY_FIELD_NUMBER: builtins.int
@@ -111,14 +193,19 @@ class Meta(google.protobuf.message.Message):
 
         @property
         def value(self) -> google.protobuf.struct_pb2.Value: ...
-
-        def __init__(self,
+        def __init__(
+            self,
             *,
-            key : typing.Text = ...,
-            value : typing.Optional[google.protobuf.struct_pb2.Value] = ...,
-            ) -> None: ...
-        def HasField(self, field_name: typing_extensions.Literal[u"value",b"value"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing_extensions.Literal[u"key",b"key",u"value",b"value"]) -> None: ...
+            key: typing.Text = ...,
+            value: typing.Optional[google.protobuf.struct_pb2.Value] = ...,
+        ) -> None: ...
+        def HasField(
+            self, field_name: typing_extensions.Literal["value", b"value"]
+        ) -> builtins.bool: ...
+        def ClearField(
+            self,
+            field_name: typing_extensions.Literal["key", b"key", "value", b"value"],
+        ) -> None: ...
 
     class RoutingEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor = ...
@@ -127,12 +214,16 @@ class Meta(google.protobuf.message.Message):
         key: typing.Text = ...
         value: builtins.int = ...
 
-        def __init__(self,
+        def __init__(
+            self,
             *,
-            key : typing.Text = ...,
-            value : builtins.int = ...,
-            ) -> None: ...
-        def ClearField(self, field_name: typing_extensions.Literal[u"key",b"key",u"value",b"value"]) -> None: ...
+            key: typing.Text = ...,
+            value: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(
+            self,
+            field_name: typing_extensions.Literal["key", b"key", "value", b"value"],
+        ) -> None: ...
 
     class RequestPathEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor = ...
@@ -141,12 +232,16 @@ class Meta(google.protobuf.message.Message):
         key: typing.Text = ...
         value: typing.Text = ...
 
-        def __init__(self,
+        def __init__(
+            self,
             *,
-            key : typing.Text = ...,
-            value : typing.Text = ...,
-            ) -> None: ...
-        def ClearField(self, field_name: typing_extensions.Literal[u"key",b"key",u"value",b"value"]) -> None: ...
+            key: typing.Text = ...,
+            value: typing.Text = ...,
+        ) -> None: ...
+        def ClearField(
+            self,
+            field_name: typing_extensions.Literal["key", b"key", "value", b"value"],
+        ) -> None: ...
 
     PUID_FIELD_NUMBER: builtins.int
     TAGS_FIELD_NUMBER: builtins.int
@@ -156,37 +251,68 @@ class Meta(google.protobuf.message.Message):
     puid: typing.Text = ...
 
     @property
-    def tags(self) -> google.protobuf.internal.containers.MessageMap[typing.Text, google.protobuf.struct_pb2.Value]: ...
-
+    def tags(
+        self,
+    ) -> google.protobuf.internal.containers.MessageMap[
+        typing.Text, google.protobuf.struct_pb2.Value
+    ]: ...
     @property
-    def routing(self) -> google.protobuf.internal.containers.ScalarMap[typing.Text, builtins.int]: ...
-
+    def routing(
+        self,
+    ) -> google.protobuf.internal.containers.ScalarMap[typing.Text, builtins.int]: ...
     @property
-    def requestPath(self) -> google.protobuf.internal.containers.ScalarMap[typing.Text, typing.Text]: ...
-
+    def requestPath(
+        self,
+    ) -> google.protobuf.internal.containers.ScalarMap[typing.Text, typing.Text]: ...
     @property
-    def metrics(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Metric]: ...
-
-    def __init__(self,
+    def metrics(
+        self,
+    ) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[
+        global___Metric
+    ]: ...
+    def __init__(
+        self,
         *,
-        puid : typing.Text = ...,
-        tags : typing.Optional[typing.Mapping[typing.Text, google.protobuf.struct_pb2.Value]] = ...,
-        routing : typing.Optional[typing.Mapping[typing.Text, builtins.int]] = ...,
-        requestPath : typing.Optional[typing.Mapping[typing.Text, typing.Text]] = ...,
-        metrics : typing.Optional[typing.Iterable[global___Metric]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal[u"metrics",b"metrics",u"puid",b"puid",u"requestPath",b"requestPath",u"routing",b"routing",u"tags",b"tags"]) -> None: ...
+        puid: typing.Text = ...,
+        tags: typing.Optional[
+            typing.Mapping[typing.Text, google.protobuf.struct_pb2.Value]
+        ] = ...,
+        routing: typing.Optional[typing.Mapping[typing.Text, builtins.int]] = ...,
+        requestPath: typing.Optional[typing.Mapping[typing.Text, typing.Text]] = ...,
+        metrics: typing.Optional[typing.Iterable[global___Metric]] = ...,
+    ) -> None: ...
+    def ClearField(
+        self,
+        field_name: typing_extensions.Literal[
+            "metrics",
+            b"metrics",
+            "puid",
+            b"puid",
+            "requestPath",
+            b"requestPath",
+            "routing",
+            b"routing",
+            "tags",
+            b"tags",
+        ],
+    ) -> None: ...
+
 global___Meta = Meta
 
 class Metric(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor = ...
-    class _MetricType(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MetricType.V], builtins.type):
+
+    class _MetricType(
+        google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MetricType.V],
+        builtins.type,
+    ):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor = ...
         COUNTER = Metric.MetricType.V(0)
         GAUGE = Metric.MetricType.V(1)
         TIMER = Metric.MetricType.V(2)
+
     class MetricType(metaclass=_MetricType):
-        V = typing.NewType('V', builtins.int)
+        V = typing.NewType("V", builtins.int)
     COUNTER = Metric.MetricType.V(0)
     GAUGE = Metric.MetricType.V(1)
     TIMER = Metric.MetricType.V(2)
@@ -198,12 +324,16 @@ class Metric(google.protobuf.message.Message):
         key: typing.Text = ...
         value: typing.Text = ...
 
-        def __init__(self,
+        def __init__(
+            self,
             *,
-            key : typing.Text = ...,
-            value : typing.Text = ...,
-            ) -> None: ...
-        def ClearField(self, field_name: typing_extensions.Literal[u"key",b"key",u"value",b"value"]) -> None: ...
+            key: typing.Text = ...,
+            value: typing.Text = ...,
+        ) -> None: ...
+        def ClearField(
+            self,
+            field_name: typing_extensions.Literal["key", b"key", "value", b"value"],
+        ) -> None: ...
 
     KEY_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int
@@ -214,16 +344,24 @@ class Metric(google.protobuf.message.Message):
     value: builtins.float = ...
 
     @property
-    def tags(self) -> google.protobuf.internal.containers.ScalarMap[typing.Text, typing.Text]: ...
-
-    def __init__(self,
+    def tags(
+        self,
+    ) -> google.protobuf.internal.containers.ScalarMap[typing.Text, typing.Text]: ...
+    def __init__(
+        self,
         *,
-        key : typing.Text = ...,
-        type : global___Metric.MetricType.V = ...,
-        value : builtins.float = ...,
-        tags : typing.Optional[typing.Mapping[typing.Text, typing.Text]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal[u"key",b"key",u"tags",b"tags",u"type",b"type",u"value",b"value"]) -> None: ...
+        key: typing.Text = ...,
+        type: global___Metric.MetricType.V = ...,
+        value: builtins.float = ...,
+        tags: typing.Optional[typing.Mapping[typing.Text, typing.Text]] = ...,
+    ) -> None: ...
+    def ClearField(
+        self,
+        field_name: typing_extensions.Literal[
+            "key", b"key", "tags", b"tags", "type", b"type", "value", b"value"
+        ],
+    ) -> None: ...
+
 global___Metric = Metric
 
 class SeldonMessageList(google.protobuf.message.Message):
@@ -231,23 +369,35 @@ class SeldonMessageList(google.protobuf.message.Message):
     SELDONMESSAGES_FIELD_NUMBER: builtins.int
 
     @property
-    def seldonMessages(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___SeldonMessage]: ...
-
-    def __init__(self,
+    def seldonMessages(
+        self,
+    ) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[
+        global___SeldonMessage
+    ]: ...
+    def __init__(
+        self,
         *,
-        seldonMessages : typing.Optional[typing.Iterable[global___SeldonMessage]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal[u"seldonMessages",b"seldonMessages"]) -> None: ...
+        seldonMessages: typing.Optional[typing.Iterable[global___SeldonMessage]] = ...,
+    ) -> None: ...
+    def ClearField(
+        self, field_name: typing_extensions.Literal["seldonMessages", b"seldonMessages"]
+    ) -> None: ...
+
 global___SeldonMessageList = SeldonMessageList
 
 class Status(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor = ...
-    class _StatusFlag(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[StatusFlag.V], builtins.type):
+
+    class _StatusFlag(
+        google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[StatusFlag.V],
+        builtins.type,
+    ):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor = ...
         SUCCESS = Status.StatusFlag.V(0)
         FAILURE = Status.StatusFlag.V(1)
+
     class StatusFlag(metaclass=_StatusFlag):
-        V = typing.NewType('V', builtins.int)
+        V = typing.NewType("V", builtins.int)
     SUCCESS = Status.StatusFlag.V(0)
     FAILURE = Status.StatusFlag.V(1)
 
@@ -260,14 +410,21 @@ class Status(google.protobuf.message.Message):
     reason: typing.Text = ...
     status: global___Status.StatusFlag.V = ...
 
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        code : builtins.int = ...,
-        info : typing.Text = ...,
-        reason : typing.Text = ...,
-        status : global___Status.StatusFlag.V = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal[u"code",b"code",u"info",b"info",u"reason",b"reason",u"status",b"status"]) -> None: ...
+        code: builtins.int = ...,
+        info: typing.Text = ...,
+        reason: typing.Text = ...,
+        status: global___Status.StatusFlag.V = ...,
+    ) -> None: ...
+    def ClearField(
+        self,
+        field_name: typing_extensions.Literal[
+            "code", b"code", "info", b"info", "reason", b"reason", "status", b"status"
+        ],
+    ) -> None: ...
+
 global___Status = Status
 
 class Feedback(google.protobuf.message.Message):
@@ -280,22 +437,38 @@ class Feedback(google.protobuf.message.Message):
 
     @property
     def request(self) -> global___SeldonMessage: ...
-
     @property
     def response(self) -> global___SeldonMessage: ...
-
     @property
     def truth(self) -> global___SeldonMessage: ...
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        request : typing.Optional[global___SeldonMessage] = ...,
-        response : typing.Optional[global___SeldonMessage] = ...,
-        reward : builtins.float = ...,
-        truth : typing.Optional[global___SeldonMessage] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal[u"request",b"request",u"response",b"response",u"truth",b"truth"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal[u"request",b"request",u"response",b"response",u"reward",b"reward",u"truth",b"truth"]) -> None: ...
+        request: typing.Optional[global___SeldonMessage] = ...,
+        response: typing.Optional[global___SeldonMessage] = ...,
+        reward: builtins.float = ...,
+        truth: typing.Optional[global___SeldonMessage] = ...,
+    ) -> None: ...
+    def HasField(
+        self,
+        field_name: typing_extensions.Literal[
+            "request", b"request", "response", b"response", "truth", b"truth"
+        ],
+    ) -> builtins.bool: ...
+    def ClearField(
+        self,
+        field_name: typing_extensions.Literal[
+            "request",
+            b"request",
+            "response",
+            b"response",
+            "reward",
+            b"reward",
+            "truth",
+            b"truth",
+        ],
+    ) -> None: ...
+
 global___Feedback = Feedback
 
 class RequestResponse(google.protobuf.message.Message):
@@ -305,17 +478,27 @@ class RequestResponse(google.protobuf.message.Message):
 
     @property
     def request(self) -> global___SeldonMessage: ...
-
     @property
     def response(self) -> global___SeldonMessage: ...
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        request : typing.Optional[global___SeldonMessage] = ...,
-        response : typing.Optional[global___SeldonMessage] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal[u"request",b"request",u"response",b"response"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal[u"request",b"request",u"response",b"response"]) -> None: ...
+        request: typing.Optional[global___SeldonMessage] = ...,
+        response: typing.Optional[global___SeldonMessage] = ...,
+    ) -> None: ...
+    def HasField(
+        self,
+        field_name: typing_extensions.Literal[
+            "request", b"request", "response", b"response"
+        ],
+    ) -> builtins.bool: ...
+    def ClearField(
+        self,
+        field_name: typing_extensions.Literal[
+            "request", b"request", "response", b"response"
+        ],
+    ) -> None: ...
+
 global___RequestResponse = RequestResponse
 
 class SeldonModelMetadataRequest(google.protobuf.message.Message):
@@ -323,11 +506,15 @@ class SeldonModelMetadataRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     name: typing.Text = ...
 
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        name : typing.Text = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal[u"name",b"name"]) -> None: ...
+        name: typing.Text = ...,
+    ) -> None: ...
+    def ClearField(
+        self, field_name: typing_extensions.Literal["name", b"name"]
+    ) -> None: ...
+
 global___SeldonModelMetadataRequest = SeldonModelMetadataRequest
 
 class SeldonMessageMetadata(google.protobuf.message.Message):
@@ -340,25 +527,45 @@ class SeldonMessageMetadata(google.protobuf.message.Message):
     messagetype: typing.Text = ...
     name: typing.Text = ...
     datatype: typing.Text = ...
-    shape: google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int] = ...
+    shape: google.protobuf.internal.containers.RepeatedScalarFieldContainer[
+        builtins.int
+    ] = ...
 
     @property
     def schema(self) -> google.protobuf.struct_pb2.Value: ...
-
-    def __init__(self,
+    def __init__(
+        self,
         *,
-        messagetype : typing.Text = ...,
-        schema : typing.Optional[google.protobuf.struct_pb2.Value] = ...,
-        name : typing.Text = ...,
-        datatype : typing.Text = ...,
-        shape : typing.Optional[typing.Iterable[builtins.int]] = ...,
-        ) -> None: ...
-    def HasField(self, field_name: typing_extensions.Literal[u"schema",b"schema"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing_extensions.Literal[u"datatype",b"datatype",u"messagetype",b"messagetype",u"name",b"name",u"schema",b"schema",u"shape",b"shape"]) -> None: ...
+        messagetype: typing.Text = ...,
+        schema: typing.Optional[google.protobuf.struct_pb2.Value] = ...,
+        name: typing.Text = ...,
+        datatype: typing.Text = ...,
+        shape: typing.Optional[typing.Iterable[builtins.int]] = ...,
+    ) -> None: ...
+    def HasField(
+        self, field_name: typing_extensions.Literal["schema", b"schema"]
+    ) -> builtins.bool: ...
+    def ClearField(
+        self,
+        field_name: typing_extensions.Literal[
+            "datatype",
+            b"datatype",
+            "messagetype",
+            b"messagetype",
+            "name",
+            b"name",
+            "schema",
+            b"schema",
+            "shape",
+            b"shape",
+        ],
+    ) -> None: ...
+
 global___SeldonMessageMetadata = SeldonMessageMetadata
 
 class SeldonModelMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor = ...
+
     class CustomEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor = ...
         KEY_FIELD_NUMBER: builtins.int
@@ -366,12 +573,16 @@ class SeldonModelMetadata(google.protobuf.message.Message):
         key: typing.Text = ...
         value: typing.Text = ...
 
-        def __init__(self,
+        def __init__(
+            self,
             *,
-            key : typing.Text = ...,
-            value : typing.Text = ...,
-            ) -> None: ...
-        def ClearField(self, field_name: typing_extensions.Literal[u"key",b"key",u"value",b"value"]) -> None: ...
+            key: typing.Text = ...,
+            value: typing.Text = ...,
+        ) -> None: ...
+        def ClearField(
+            self,
+            field_name: typing_extensions.Literal["key", b"key", "value", b"value"],
+        ) -> None: ...
 
     NAME_FIELD_NUMBER: builtins.int
     VERSIONS_FIELD_NUMBER: builtins.int
@@ -380,32 +591,60 @@ class SeldonModelMetadata(google.protobuf.message.Message):
     OUTPUTS_FIELD_NUMBER: builtins.int
     CUSTOM_FIELD_NUMBER: builtins.int
     name: typing.Text = ...
-    versions: google.protobuf.internal.containers.RepeatedScalarFieldContainer[typing.Text] = ...
+    versions: google.protobuf.internal.containers.RepeatedScalarFieldContainer[
+        typing.Text
+    ] = ...
     platform: typing.Text = ...
 
     @property
-    def inputs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___SeldonMessageMetadata]: ...
-
+    def inputs(
+        self,
+    ) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[
+        global___SeldonMessageMetadata
+    ]: ...
     @property
-    def outputs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___SeldonMessageMetadata]: ...
-
+    def outputs(
+        self,
+    ) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[
+        global___SeldonMessageMetadata
+    ]: ...
     @property
-    def custom(self) -> google.protobuf.internal.containers.ScalarMap[typing.Text, typing.Text]: ...
-
-    def __init__(self,
+    def custom(
+        self,
+    ) -> google.protobuf.internal.containers.ScalarMap[typing.Text, typing.Text]: ...
+    def __init__(
+        self,
         *,
-        name : typing.Text = ...,
-        versions : typing.Optional[typing.Iterable[typing.Text]] = ...,
-        platform : typing.Text = ...,
-        inputs : typing.Optional[typing.Iterable[global___SeldonMessageMetadata]] = ...,
-        outputs : typing.Optional[typing.Iterable[global___SeldonMessageMetadata]] = ...,
-        custom : typing.Optional[typing.Mapping[typing.Text, typing.Text]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal[u"custom",b"custom",u"inputs",b"inputs",u"name",b"name",u"outputs",b"outputs",u"platform",b"platform",u"versions",b"versions"]) -> None: ...
+        name: typing.Text = ...,
+        versions: typing.Optional[typing.Iterable[typing.Text]] = ...,
+        platform: typing.Text = ...,
+        inputs: typing.Optional[typing.Iterable[global___SeldonMessageMetadata]] = ...,
+        outputs: typing.Optional[typing.Iterable[global___SeldonMessageMetadata]] = ...,
+        custom: typing.Optional[typing.Mapping[typing.Text, typing.Text]] = ...,
+    ) -> None: ...
+    def ClearField(
+        self,
+        field_name: typing_extensions.Literal[
+            "custom",
+            b"custom",
+            "inputs",
+            b"inputs",
+            "name",
+            b"name",
+            "outputs",
+            b"outputs",
+            "platform",
+            b"platform",
+            "versions",
+            b"versions",
+        ],
+    ) -> None: ...
+
 global___SeldonModelMetadata = SeldonModelMetadata
 
 class SeldonGraphMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor = ...
+
     class ModelsEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor = ...
         KEY_FIELD_NUMBER: builtins.int
@@ -414,14 +653,19 @@ class SeldonGraphMetadata(google.protobuf.message.Message):
 
         @property
         def value(self) -> global___SeldonModelMetadata: ...
-
-        def __init__(self,
+        def __init__(
+            self,
             *,
-            key : typing.Text = ...,
-            value : typing.Optional[global___SeldonModelMetadata] = ...,
-            ) -> None: ...
-        def HasField(self, field_name: typing_extensions.Literal[u"value",b"value"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing_extensions.Literal[u"key",b"key",u"value",b"value"]) -> None: ...
+            key: typing.Text = ...,
+            value: typing.Optional[global___SeldonModelMetadata] = ...,
+        ) -> None: ...
+        def HasField(
+            self, field_name: typing_extensions.Literal["value", b"value"]
+        ) -> builtins.bool: ...
+        def ClearField(
+            self,
+            field_name: typing_extensions.Literal["key", b"key", "value", b"value"],
+        ) -> None: ...
 
     NAME_FIELD_NUMBER: builtins.int
     MODELS_FIELD_NUMBER: builtins.int
@@ -430,20 +674,45 @@ class SeldonGraphMetadata(google.protobuf.message.Message):
     name: typing.Text = ...
 
     @property
-    def models(self) -> google.protobuf.internal.containers.MessageMap[typing.Text, global___SeldonModelMetadata]: ...
-
+    def models(
+        self,
+    ) -> google.protobuf.internal.containers.MessageMap[
+        typing.Text, global___SeldonModelMetadata
+    ]: ...
     @property
-    def inputs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___SeldonMessageMetadata]: ...
-
+    def inputs(
+        self,
+    ) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[
+        global___SeldonMessageMetadata
+    ]: ...
     @property
-    def outputs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___SeldonMessageMetadata]: ...
-
-    def __init__(self,
+    def outputs(
+        self,
+    ) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[
+        global___SeldonMessageMetadata
+    ]: ...
+    def __init__(
+        self,
         *,
-        name : typing.Text = ...,
-        models : typing.Optional[typing.Mapping[typing.Text, global___SeldonModelMetadata]] = ...,
-        inputs : typing.Optional[typing.Iterable[global___SeldonMessageMetadata]] = ...,
-        outputs : typing.Optional[typing.Iterable[global___SeldonMessageMetadata]] = ...,
-        ) -> None: ...
-    def ClearField(self, field_name: typing_extensions.Literal[u"inputs",b"inputs",u"models",b"models",u"name",b"name",u"outputs",b"outputs"]) -> None: ...
+        name: typing.Text = ...,
+        models: typing.Optional[
+            typing.Mapping[typing.Text, global___SeldonModelMetadata]
+        ] = ...,
+        inputs: typing.Optional[typing.Iterable[global___SeldonMessageMetadata]] = ...,
+        outputs: typing.Optional[typing.Iterable[global___SeldonMessageMetadata]] = ...,
+    ) -> None: ...
+    def ClearField(
+        self,
+        field_name: typing_extensions.Literal[
+            "inputs",
+            b"inputs",
+            "models",
+            b"models",
+            "name",
+            b"name",
+            "outputs",
+            b"outputs",
+        ],
+    ) -> None: ...
+
 global___SeldonGraphMetadata = SeldonGraphMetadata

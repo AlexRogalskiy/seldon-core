@@ -4,6 +4,7 @@ import numpy as np
 
 from alibi_detect.od import IForest
 from alibi_detect.utils.data import create_outlier_batch
+
 # from alibi_detect.utils.saving import save_detector, load_detector
 # from alibi_detect.utils.visualize import plot_instance_score
 
@@ -23,29 +24,32 @@ def train_preprocessor(data):
     print("Training preprocessor.")
 
     ordinal_features = [
-        n for (n, _) in enumerate(data.feature_names)
-        if n not in data.category_map
+        n for (n, _) in enumerate(data.feature_names) if n not in data.category_map
     ]
 
-    ordinal_transformer = Pipeline(steps=[
-            ('imputer', SimpleImputer(strategy='median')),
-            ('scaler', StandardScaler())
-    ])
+    ordinal_transformer = Pipeline(
+        steps=[
+            ("imputer", SimpleImputer(strategy="median")),
+            ("scaler", StandardScaler()),
+        ]
+    )
 
-    preprocessor = ColumnTransformer(transformers=[
-        ('num', ordinal_transformer, ordinal_features),
-    ])
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ("num", ordinal_transformer, ordinal_features),
+        ]
+    )
 
     preprocessor.fit(data.data)
 
-    return  preprocessor
+    return preprocessor
 
 
 def train_detector(data, preprocessor, perc_outlier=5):
     """Train outliers detector."""
 
     print("Initialize outlier detector.")
-    od = IForest(threshold=None,  n_estimators=100)
+    od = IForest(threshold=None, n_estimators=100)
 
     print("Training on normal data.")
     np.random.seed(0)
@@ -53,7 +57,7 @@ def train_detector(data, preprocessor, perc_outlier=5):
         data.data, data.target, n_samples=30000, perc_outlier=0
     )
 
-    X_train = normal_batch.data.astype('float')
+    X_train = normal_batch.data.astype("float")
     # y_train = normal_batch.target
 
     od.fit(preprocessor.transform(X_train))
@@ -63,7 +67,7 @@ def train_detector(data, preprocessor, perc_outlier=5):
     threshold_batch = create_outlier_batch(
         data.data, data.target, n_samples=1000, perc_outlier=perc_outlier
     )
-    X_threshold = threshold_batch.data.astype('float')
+    X_threshold = threshold_batch.data.astype("float")
     # y_threshold = threshold_batch.target
 
     od.infer_threshold(

@@ -2,7 +2,6 @@ import logging
 import os
 
 
-
 NODE = os.environ.get("NODE_NAME", "default")
 
 ALL_MDOELS_META = {
